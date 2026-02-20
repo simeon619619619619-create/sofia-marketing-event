@@ -3,421 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EFI — European Fashion Institute | Твойят път към модните столици</title>
-    <meta name="description" content="EFI е кариера-accelerator + talent ecosystem + monetization engine. Намери талант, оформи го, позиционирай го, монетизирай го.">
+    <title>София Маркетинг Форум 2026 | Промени мисленето си</title>
+    <meta name="description" content="Еднодневен интензивен маркетинг форум в София. Научи най-новите стратегии от водещи експерти. 220 места.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
     
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
         :root {
-            --bg-dark: #0a0a0a;
-            --bg-card: #111111;
-            --bg-elevated: #1a1a1a;
-            --accent-gold: #c9a962;
-            --accent-gold-light: #e8d5a3;
-            --accent-silver: #a8a8a8;
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #141414;
+            --bg-card: #1a1a1a;
+            --accent-gold: #D4AF37;
+            --accent-gold-light: #F4C430;
+            --accent-orange: #FF6B35;
             --text-primary: #ffffff;
-            --text-secondary: #b0b0b0;
+            --text-secondary: #a0a0a0;
             --text-muted: #666666;
-            --font-display: 'Cormorant Garamond', Georgia, serif;
             --font-main: 'Inter', -apple-system, sans-serif;
+            --font-display: 'Playfair Display', Georgia, serif;
         }
-        
         html { scroll-behavior: smooth; }
-        body { font-family: var(--font-main); background: var(--bg-dark); color: var(--text-primary); line-height: 1.6; }
-        
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        body { font-family: var(--font-main); background-color: var(--bg-primary); color: var(--text-primary); line-height: 1.6; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+        .section { padding: 6rem 0; }
+        .text-center { text-align: center; }
+        .text-gold { color: var(--accent-gold); }
         
         /* Hero */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            background: 
-                radial-gradient(ellipse at 20% 30%, rgba(201, 169, 98, 0.08) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 70%, rgba(201, 169, 98, 0.05) 0%, transparent 40%),
-                var(--bg-dark);
-            overflow: hidden;
-        }
+        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; background: radial-gradient(ellipse at 30% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 50%), radial-gradient(ellipse at 70% 80%, rgba(255, 107, 53, 0.05) 0%, transparent 40%), var(--bg-primary); }
+        .hero-content { position: relative; z-index: 2; text-align: center; padding: 2rem; }
+        .hero-badges { display: flex; justify-content: center; gap: 1rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
+        .badge { padding: 0.6rem 1.4rem; background: rgba(212, 175, 55, 0.1); border: 1px solid rgba(212, 175, 55, 0.25); border-radius: 50px; font-size: 0.85rem; font-weight: 600; color: var(--accent-gold-light); text-transform: uppercase; letter-spacing: 0.05em; }
+        .hero-title { font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800; line-height: 1.15; margin-bottom: 1.5rem; }
+        .hero-title .highlight { color: var(--accent-gold); display: block; }
+        .hero-subtitle { font-size: clamp(1.1rem, 2vw, 1.4rem); color: var(--text-secondary); max-width: 600px; margin: 0 auto 2.5rem; }
+        .hero-cta { display: inline-flex; align-items: center; gap: 0.75rem; padding: 1.1rem 2.5rem; font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--bg-primary); background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%); border: none; border-radius: 60px; cursor: pointer; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 30px rgba(212, 175, 55, 0.25); }
+        .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(212, 175, 55, 0.35); }
+        .hero-seats { margin-top: 1.5rem; font-size: 0.9rem; color: var(--accent-orange); font-weight: 500; }
+        .hero-date { margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted); }
         
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2.5l2 .5-.5 2.5zm10-7.5v2.5l-2-.5.5-2.5-2 .5v2h2l.5 2.5 2-.5zM20 22v-2.5l2 .5-.5 2.5-2-.5v2h2l-.5-2.5zM0 20h2v2.5l-2-.5.5-2.5-2 .5v2l2-.5zM20 20l.5 2.5 2-.5-2.5.5v-2l2 .5-.5-2.5-2 .5zm10 0l-.5 2.5 2-.5-2.5.5v-2l2 .5-.5-2.5-2 .5zM0 20l-.5 2.5 2-.5-2.5.5v-2l2 .5-.5-2.5-2 .5z' fill='%23ffffff' fill-opacity='0.02' fill-rule='evenodd'/%3E%3C/svg%3E");
-            opacity: 0.6;
-        }
+        /* Sections */
+        .section-label { display: inline-block; padding: 0.5rem 1rem; background: rgba(255, 107, 53, 0.1); border: 1px solid rgba(255, 107, 53, 0.25); border-radius: 30px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent-orange); margin-bottom: 1.5rem; }
+        .solution .section-label { background: rgba(212, 175, 55, 0.1); border-color: rgba(212, 175, 55, 0.25); color: var(--accent-gold); }
+        .section-title { font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 1rem; }
+        .section-subtitle { font-size: 1.1rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto 3rem; }
         
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            padding: 2rem;
-        }
+        /* Problem */
+        .problem { background: var(--bg-secondary); }
+        .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        .problem-card { background: var(--bg-card); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 2rem; transition: all 0.3s ease; }
+        .problem-card:hover { border-color: rgba(255, 107, 53, 0.3); transform: translateY(-3px); }
+        .problem-card-icon { width: 48px; height: 48px; background: rgba(255, 107, 53, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; }
+        .problem-card-icon svg { width: 24px; height: 24px; stroke: var(--accent-orange); fill: none; stroke-width: 2; }
+        .problem-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem; }
+        .problem-card p { font-size: 0.95rem; color: var(--text-secondary); }
         
-        .hero-badge {
-            display: inline-block;
-            padding: 0.5rem 1.5rem;
-            background: rgba(201, 169, 98, 0.1);
-            border: 1px solid rgba(201, 169, 98, 0.3);
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--accent-gold);
-            margin-bottom: 2rem;
-        }
+        /* Solution */
+        .solution { background: var(--bg-primary); }
+        .benefit-list { list-style: none; max-width: 700px; margin: 0 auto; }
+        .benefit-item { display: flex; align-items: flex-start; gap: 1.25rem; padding: 1.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        .benefit-check { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .benefit-check svg { width: 16px; height: 16px; stroke: var(--bg-primary); stroke-width: 3; }
+        .benefit-content h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 0.4rem; }
+        .benefit-content p { font-size: 0.95rem; color: var(--text-secondary); }
         
-        .hero-title {
-            font-family: var(--font-display);
-            font-size: clamp(3rem, 8vw, 5.5rem);
-            font-weight: 600;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            color: var(--text-primary);
-        }
+        /* Speakers */
+        .speakers { background: var(--bg-secondary); }
+        .speakers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .speaker-card { background: var(--bg-card); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 20px; padding: 2rem; text-align: center; transition: all 0.3s ease; }
+        .speaker-card:hover { border-color: rgba(212, 175, 55, 0.3); transform: translateY(-4px); }
+        .speaker-avatar { width: 100px; height: 100px; background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(255, 107, 53, 0.15)); border: 2px solid rgba(212, 175, 55, 0.3); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; }
+        .speaker-avatar svg { width: 50px; height: 50px; stroke: var(--accent-gold); fill: none; stroke-width: 1.5; }
+        .speaker-name { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--accent-gold); margin-bottom: 0.5rem; }
+        .speaker-title { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem; }
+        .speaker-bio { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
         
-        .hero-title .gold {
-            color: var(--accent-gold);
-            font-style: italic;
-        }
+        /* Program */
+        .program { background: var(--bg-primary); }
+        .program-grid { display: grid; gap: 1rem; }
+        .program-item { background: var(--bg-card); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 1.75rem 2rem; display: flex; align-items: center; gap: 1.5rem; transition: all 0.3s ease; }
+        .program-item:hover { border-color: rgba(212, 175, 55, 0.25); transform: translateX(4px); }
+        .program-time { font-size: 0.85rem; font-weight: 600; color: var(--accent-gold); min-width: 80px; }
+        .program-content h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.3rem; }
+        .program-content p { font-size: 0.9rem; color: var(--text-secondary); }
         
-        .hero-tagline {
-            font-size: clamp(1.1rem, 2vw, 1.5rem);
-            color: var(--text-secondary);
-            max-width: 650px;
-            margin: 0 auto 2.5rem;
-            font-weight: 300;
-        }
+        /* Pricing */
+        .pricing { background: var(--bg-secondary); }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 800px; margin: 0 auto; }
+        .price-card { background: var(--bg-card); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 20px; padding: 2.5rem; text-align: center; transition: all 0.3s ease; position: relative; }
+        .price-card.featured { border-color: rgba(212, 175, 55, 0.4); background: linear-gradient(180deg, rgba(212, 175, 55, 0.08) 0%, var(--bg-card) 100%); }
+        .price-card.featured::before { content: 'Най-популярен'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); padding: 0.4rem 1rem; background: var(--accent-gold); color: var(--bg-primary); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; border-radius: 20px; }
+        .price-card:hover { transform: translateY(-5px); }
+        .price-name { font-size: 1.1rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .price-amount { font-family: var(--font-display); font-size: 3rem; font-weight: 800; margin-bottom: 0.5rem; }
+        .price-amount .currency { font-size: 1.5rem; vertical-align: super; }
+        .price-card.featured .price-amount { color: var(--accent-gold); }
+        .price-desc { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 2rem; }
+        .price-features { list-style: none; text-align: left; margin-bottom: 2rem; }
+        .price-features li { padding: 0.6rem 0; font-size: 0.95rem; color: var(--text-secondary); display: flex; align-items: center; gap: 0.75rem; }
+        .price-features li::before { content: '✓'; color: var(--accent-gold); font-weight: 700; }
+        .price-cta { display: block; width: 100%; padding: 1rem; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-primary); background: transparent; border: 2px solid rgba(255, 255, 255, 0.15); border-radius: 60px; cursor: pointer; text-decoration: none; transition: all 0.3s ease; }
+        .price-cta:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
+        .price-card.featured .price-cta { background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light)); border: none; color: var(--bg-primary); }
         
-        .hero-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 1rem 2.5rem;
-            font-size: 0.95rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--bg-dark);
-            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light));
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 30px rgba(201, 169, 98, 0.25);
-        }
-        
-        .hero-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 40px rgba(201, 169, 98, 0.35);
-        }
-        
-        .hero-scroll {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            color: var(--text-muted);
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            opacity: 0.5;
-        }
-        
-        /* Section */
-        .section { padding: 8rem 0; }
-        .section-dark { background: var(--bg-card); }
-        
-        .section-label {
-            display: inline-block;
-            padding: 0.4rem 1rem;
-            background: rgba(201, 169, 98, 0.1);
-            border: 1px solid rgba(201, 169, 98, 0.2);
-            border-radius: 30px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--accent-gold);
-            margin-bottom: 1rem;
-        }
-        
-        .section-title {
-            font-family: var(--font-display);
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-        
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto 3rem;
-        }
-        
-        /* Not */
-        .not-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.5rem;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        .not-card {
-            background: var(--bg-elevated);
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 16px;
-            padding: 2rem;
-            text-align: center;
-            opacity: 0.5;
-            transition: all 0.3s ease;
-        }
-        
-        .not-card:hover { opacity: 0.7; }
-        
-        .not-icon {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--text-muted);
-            text-decoration: line-through;
-        }
-        
-        .not-title {
-            font-weight: 600;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-        
-        /* Is */
-        .is-highlight {
-            background: linear-gradient(135deg, rgba(201, 169, 98, 0.1), transparent);
-            border: 1px solid rgba(201, 169, 98, 0.2);
-            border-radius: 24px;
-            padding: 3rem;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .is-title {
-            font-family: var(--font-display);
-            font-size: clamp(2rem, 4vw, 2.8rem);
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-        }
-        
-        .is-title .gold { color: var(--accent-gold); }
-        
-        .is-text {
-            font-size: 1.15rem;
-            color: var(--text-secondary);
-            line-height: 1.8;
-        }
-        
-        .is-text strong { color: var(--accent-gold); }
-        
-        /* What We Do */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        .service-card {
-            background: var(--bg-elevated);
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 20px;
-            padding: 2.5rem;
-            transition: all 0.3s ease;
-        }
-        
-        .service-card:hover {
-            border-color: rgba(201, 169, 98, 0.3);
-            transform: translateY(-4px);
-        }
-        
-        .service-icon {
-            width: 56px;
-            height: 56px;
-            background: linear-gradient(135deg, rgba(201, 169, 98, 0.2), rgba(201, 169, 98, 0.05));
-            border: 1px solid rgba(201, 169, 98, 0.3);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-        }
-        
-        .service-title {
-            font-family: var(--font-display);
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            color: var(--text-primary);
-        }
-        
-        .service-desc {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
-        
-        /* Systems */
-        .systems-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        .system-card {
-            background: var(--bg-elevated);
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 16px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-        }
-        
-        .system-card:hover { border-color: rgba(201, 169, 98, 0.2); }
-        
-        .system-num {
-            font-family: var(--font-display);
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: var(--accent-gold);
-            opacity: 0.3;
-            margin-bottom: 1rem;
-        }
-        
-        .system-title {
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 0.75rem;
-        }
-        
-        .system-desc {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-        
-        /* Vision */
-        .vision-content {
-            max-width: 700px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .vision-title {
-            font-family: var(--font-display);
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 600;
-            margin-bottom: 2rem;
-            line-height: 1.2;
-        }
-        
-        .vision-title .gold { color: var(--accent-gold); }
-        
-        .vision-text {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            line-height: 1.8;
-        }
+        /* FAQ */
+        .faq { background: var(--bg-primary); }
+        .faq-list { max-width: 700px; margin: 0 auto; }
+        .faq-item { border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        .faq-question { width: 100%; padding: 1.5rem 0; background: none; border: none; text-align: left; font-size: 1.1rem; font-weight: 600; color: var(--text-primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .faq-question::after { content: '+'; font-size: 1.5rem; color: var(--accent-gold); transition: transform 0.3s ease; }
+        .faq-item.active .faq-question::after { transform: rotate(45deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .faq-item.active .faq-answer { max-height: 200px; padding-bottom: 1.5rem; }
+        .faq-answer p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; }
         
         /* CTA */
-        .cta-section {
-            background: 
-                radial-gradient(ellipse at 50% 50%, rgba(201, 169, 98, 0.1) 0%, transparent 60%),
-                var(--bg-card);
-            text-align: center;
-            padding: 10rem 0;
-        }
-        
-        .cta-title {
-            font-family: var(--font-display);
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-        }
-        
-        .cta-subtitle {
-            font-size: 1.15rem;
-            color: var(--text-secondary);
-            margin-bottom: 2.5rem;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+        .cta-section { background: radial-gradient(ellipse at 50% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 60%), var(--bg-secondary); text-align: center; padding: 8rem 0; }
+        .cta-section .section-title { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1.5rem; }
+        .cta-section p { font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 2.5rem; max-width: 500px; margin-left: auto; margin-right: auto; }
         
         /* Footer */
-        .footer {
-            background: var(--bg-dark);
-            padding: 4rem 0 2rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
-        }
-        
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-        
-        .footer-logo {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--accent-gold);
-            margin-bottom: 1rem;
-        }
-        
-        .footer-text {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            line-height: 1.7;
-        }
-        
-        .footer-title {
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-        }
-        
-        .footer-links { list-style: none; }
-        .footer-links li { margin-bottom: 0.5rem; }
-        .footer-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
+        .footer { background: var(--bg-primary); padding: 3rem 0; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+        .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+        .footer-logo { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--accent-gold); }
+        .footer-links { display: flex; gap: 2rem; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: color 0.3s ease; }
         .footer-links a:hover { color: var(--accent-gold); }
-        
-        .footer-bottom {
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            text-align: center;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
 
         @media (max-width: 768px) {
-            .section { padding: 5rem 0; }
-            .is-highlight { padding: 2rem; }
+            .section { padding: 4rem 0; }
+            .problem-grid, .speakers-grid, .pricing-grid { grid-template-columns: 1fr; }
+            .program-item { flex-direction: column; text-align: center; gap: 0.75rem; }
+            .benefit-item { flex-direction: column; text-align: center; gap: 1rem; }
+            .footer-content { flex-direction: column; text-align: center; }
+            .footer-links { flex-wrap: wrap; justify-content: center; gap: 1rem 2rem; }
         }
     </style>
 </head>
@@ -426,233 +148,226 @@
     <!-- HERO -->
     <section class="hero">
         <div class="hero-content">
-            <span class="hero-badge">European Fashion Institute</span>
-            <h1 class="hero-title">
-                Твойят път към<br>
-                <span class="gold">модните столици</span>
-            </h1>
-            <p class="hero-tagline">
-                EFI не е школа. EFI не е курс. EFI не е агенция.<br>
-                EFI е кариера-акселератор + талант екосистема + монетизация машина.
-            </p>
-            <a href="#contact" class="hero-cta">Започни своя път →</a>
-        </div>
-        <span class="hero-scroll">Scroll</span>
-    </section>
-
-    <!-- NOT SECTION -->
-    <section class="section section-dark">
-        <div class="container">
-            <div class="text-center" style="margin-bottom: 3rem;">
-                <span class="section-label">EFI НЕ Е</span>
+            <div class="hero-badges">
+                <span class="badge">220 места</span>
+                <span class="badge">София</span>
+                <span class="badge">Април 2026</span>
             </div>
-            <div class="not-grid">
-                <div class="not-card">
-                    <div class="not-icon">✗</div>
-                    <div class="not-title">Школа за модели</div>
-                </div>
-                <div class="not-card">
-                    <div class="not-icon">✗</div>
-                    <div class="not-title">Курс</div>
-                </div>
-                <div class="not-card">
-                    <div class="not-icon">✗</div>
-                    <div class="not-title">Агенция</div>
-                </div>
-                <div class="not-card">
-                    <div class="not-icon">✗</div>
-                    <div class="not-title">Инфлуенсър програма</div>
-                </div>
-            </div>
+            <h1 class="hero-title">Промени начина,<br><span class="highlight">по който гледаш на маркетинг</span></h1>
+            <p class="hero-subtitle">Еднодневен интензивен форум, който ще ти покаже най-новите маркетинг стратегии за 2026 година.</p>
+            <a href="#pricing" class="hero-cta">Вземи билет →</a>
+            <p class="hero-seats">🔥 Остават по-малко от 50 места</p>
+            <p class="hero-date">📅 4 Април 2026 | София, Хотел Маринела</p>
         </div>
     </section>
 
-    <!-- IS SECTION -->
-    <section class="section">
+    <!-- PROBLEM -->
+    <section class="section problem">
         <div class="container">
-            <div class="is-highlight">
-                <h2 class="is-title">
-                    EFI е <span class="gold">екосистема</span>
-                </h2>
-                <p class="is-text">
-                    Ние <strong>намираме талант</strong> → <strong>оформяме го</strong> → <strong>позиционираме го</strong> → <strong>монетизираме го</strong><br><br>
-                    Помагаме на момичета и момчета да преминат от мечтата към <strong>кариерата в модата</strong> — не като просто "започнат", а като <strong>изградят устойчив бизнес</strong>.
-                </p>
+            <div class="text-center">
+                <span class="section-label">Проблемът</span>
+                <h2 class="section-title">Маркетингът се промени</h2>
+                <p class="section-subtitle">Старите трикове вече не работят.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- WHAT WE DO -->
-    <section class="section section-dark">
-        <div class="container">
-            <div class="text-center" style="margin-bottom: 3rem;">
-                <span class="section-label">Какво правим</span>
-                <h2 class="section-title">Нашите направления</h2>
-                <p class="section-subtitle">Изграждаме цялостна екосистема за развитие на таланти</p>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🎓</div>
-                    <h3 class="service-title">Обучение</h3>
-                    <p class="service-desc">Моделна програма, личен бранд, социални мрежи, инфлуенсър монетизация — всичко нужно за старт.</p>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"></path></svg></div>
+                    <h3>Рекламата поскъпна</h3>
+                    <p>Facebook и Google вдигнаха цените с над 300%. Трябва ти нов подход.</p>
                 </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">🎯</div>
-                    <h3 class="service-title">Позициониране</h3>
-                    <p class="service-desc">Кастинги, кампании, дизайнерски проекти, брандове — реална работа с реални клиенти от ден едно.</p>
+                <div class="problem-card">
+                    <div class="problem-card-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg></div>
+                    <h3>Нямаш екип</h3>
+                    <p>Всичко минава през теб. Нямаш време за стратегия.</p>
                 </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">💰</div>
-                    <h3 class="service-title">Монетизация</h3>
-                    <p class="service-desc">Продуктови кампании, affiliate, UGC production — начини да изкарваш пари от таланта си.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">🌟</div>
-                    <h3 class="service-title">Събития</h3>
-                    <p class="service-desc">Кастинги дни, ревюта, конференции, нетуъркинг — излагаме те пред индустрията.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">🤝</div>
-                    <h3 class="service-title">Партньорства</h3>
-                    <p class="service-desc">Връзки с международни брандове, модни седмици, агенции — врати към света.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">🏠</div>
-                    <h3 class="service-title">Community</h3>
-                    <p class="service-desc">Абонамент, вътрешна платформа, платени ресурси — подкрепа завинаги.</p>
+                <div class="problem-card">
+                    <div class="problem-card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg></div>
+                    <h3>Хаос в социалните</h3>
+                    <p>Публикуваш всеки ден, но резултатите са нулеви.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SYSTEMS -->
-    <section class="section">
+    <!-- SOLUTION -->
+    <section class="section solution">
         <div class="container">
-            <div class="text-center" style="margin-bottom: 3rem;">
-                <span class="section-label">Core Systems</span>
-                <h2 class="section-title">Каквото ни прави различни</h2>
-                <p class="section-subtitle">Ние не продаваме обучение. Ние произвеждаме резултати.</p>
+            <div class="text-center">
+                <span class="section-label">Решението</span>
+                <h2 class="section-title">Нов начин за 2026</h2>
+                <p class="section-subtitle">Един ден, който ще ти спести месеци експерименти.</p>
             </div>
-            
-            <div class="systems-grid">
-                <div class="system-card">
-                    <div class="system-num">01</div>
-                    <h3 class="system-title">Talent Acquisition</h3>
-                    <p class="system-desc">Маркетинг, скриптове, квалификация — намираме правилните хора.</p>
+            <ul class="benefit-list">
+                <li class="benefit-item">
+                    <div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <div class="benefit-content"><h3>AI-базиран маркетинг</h3><p>Как да използваш AI за автоматизация.</p></div>
+                </li>
+                <li class="benefit-item">
+                    <div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <div class="benefit-content"><h3>Микроинфлуенсъри</h3><p>Стратегия за работа с 100+ инфлуенсъри.</p></div>
+                </li>
+                <li class="benefit-item">
+                    <div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <div class="benefit-content"><h3>Система за съдържание</h3><p>Методология за съдържание, което продава.</p></div>
+                </li>
+                <li class="benefit-item">
+                    <div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                    <div class="benefit-content"><h3>Финансов растеж</h3><p>Как да удвоиш приходите без повече реклама.</p></div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- SPEAKERS -->
+    <section class="section speakers">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-label">Лекторите</span>
+                <h2 class="section-title">Експерти с доказан опит</h2>
+            </div>
+            <div class="speakers-grid">
+                <div class="speaker-card">
+                    <div class="speaker-avatar"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></div>
+                    <h3 class="speaker-name">Симеон Димитров</h3>
+                    <p class="speaker-title">Основател, EU Fashion Institute</p>
+                    <p class="speaker-bio">С над 10 години опит в модната индустрия.</p>
                 </div>
-                
-                <div class="system-card">
-                    <div class="system-num">02</div>
-                    <h3 class="system-title">Sales System</h3>
-                    <p class="system-desc">Setters + Closers + Дискусии — превръщаме лидов в клиенти.</p>
+                <div class="speaker-card">
+                    <div class="speaker-avatar"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></div>
+                    <h3 class="speaker-name">Маркетинг Експерт</h3>
+                    <p class="speaker-title">AI & Дигитален Маркетинг</p>
+                    <p class="speaker-bio">Специалист по AI автоматизация и performance.</p>
                 </div>
-                
-                <div class="system-card">
-                    <div class="system-num">03</div>
-                    <h3 class="system-title">Development</h3>
-                    <p class="system-desc">Обучение, дисциплина, tracking — развиваме таланта.</p>
-                </div>
-                
-                <div class="system-card">
-                    <div class="system-num">04</div>
-                    <h3 class="system-title">Fulfillment</h3>
-                    <p class="system-desc">Кастинги, работа, партньори — доставяме резултати.</p>
-                </div>
-                
-                <div class="system-card">
-                    <div class="system-num">05</div>
-                    <h3 class="system-title">Brand Building</h3>
-                    <p class="system-desc">Съдържание, социални мрежи, PR — градим личен бранд.</p>
-                </div>
-                
-                <div class="system-card">
-                    <div class="system-num">06</div>
-                    <h3 class="system-title">Monetization</h3>
-                    <p class="system-desc">Кампании, сделки, брандове — изкарваме пари.</p>
+                <div class="speaker-card">
+                    <div class="speaker-avatar"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></div>
+                    <h3 class="speaker-name">Бизнес Коуч</h3>
+                    <p class="speaker-title">Стратег & Предприемач</p>
+                    <p class="speaker-bio">Помогнал на над 200 бизнеса да скалират.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- VISION -->
-    <section class="section section-dark">
+    <!-- PROGRAM -->
+    <section class="section program">
         <div class="container">
-            <div class="vision-content">
-                <span class="section-label">Дългосрочна визия</span>
-                <h2 class="vision-title">
-                    От <span class="gold">talent factory</span><br>
-                    → към <span class="gold">медийна империя</span>
-                </h2>
-                <p class="vision-text">
-                    Фаза 1: Скалираме локално с playbook, KPI, процеси<br>
-                    Фаза 2: Доминация в България<br>
-                    Фаза 3: Лицензиране, франчайз, международни модели<br>
-                    Фаза 4: Собствено съдържание, шоу формат, документални серии
-                </p>
+            <div class="text-center">
+                <span class="section-label">Програмата</span>
+                <h2 class="section-title">Какво ще научиш</h2>
+            </div>
+            <div class="program-grid">
+                <div class="program-item"><span class="program-time">09:00</span><div class="program-content"><h3>Регистрация & Кафе</h3><p>Запознанство</p></div></div>
+                <div class="program-item"><span class="program-time">09:30</span><div class="program-content"><h3>Откриване: Маркетингът в 2026</h3><p>Какво се промени</p></div></div>
+                <div class="program-item"><span class="program-time">10:00</span><div class="program-content"><h3>AI Маркетинг Стратегия</h3><p>Автоматизация с AI</p></div></div>
+                <div class="program-item"><span class="program-time">11:30</span><div class="program-content"><h3>Микроинфлуенсъри</h3><p>Стратегия за инфлуенсъри</p></div></div>
+                <div class="program-item"><span class="program-time">13:00</span><div class="program-content"><h3>Обяд & Нетуъркинг</h3><p>Почивка</p></div></div>
+                <div class="program-item"><span class="program-time">14:00</span><div class="program-content"><h3>Система за съдържание</h3><p>Как да създаваш продаващо съдържание</p></div></div>
+                <div class="program-item"><span class="program-time">15:30</span><div class="program-content"><h3>Финансов растеж</h3><p>Удвояване на приходите</p></div></div>
+                <div class="program-item"><span class="program-time">17:00</span><div class="program-content"><h3>Q&A сесия</h3><p>Отговори на въпроси</p></div></div>
+                <div class="program-item"><span class="program-time">18:00</span><div class="program-content"><h3>За криване</h3><p>Networking</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section pricing" id="pricing">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-label">Цени</span>
+                <h2 class="section-title">Избери своя билет</h2>
+            </div>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <p class="price-name">Ранен</p>
+                    <p class="price-amount"><span class="currency">лв.</span>197</p>
+                    <p class="price-desc">При запис до 28 Февруари</p>
+                    <ul class="price-features">
+                        <li>Цялодневен достъп</li>
+                        <li>Всички материали</li>
+                        <li>Сертификат</li>
+                        <li>Кафе и обяд</li>
+                    </ul>
+                    <a href="#" class="price-cta">Резервирай</a>
+                </div>
+                <div class="price-card featured">
+                    <p class="price-name">Стандартен</p>
+                    <p class="price-amount"><span class="currency">лв.</span>297</p>
+                    <p class="price-desc">При запис до 25 Март</p>
+                    <ul class="price-features">
+                        <li>Цялодневен достъп</li>
+                        <li>Всички материали</li>
+                        <li>Сертификат</li>
+                        <li>Кафе и обяд</li>
+                        <li>1:1 консултация</li>
+                    </ul>
+                    <a href="#" class="price-cta">Резервирай</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-label">FAQ</span>
+                <h2 class="section-title">Често задавани въпроси</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">Защо трябва да дойда?</button>
+                    <div class="faq-answer"><p>Защото това е единственият форум, който ти дава конкретни стратегии — не теория. Ще научиш как да удвоиш приходите си без да увеличаваш рекламния си бюджет.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Кога е събитието?</button>
+                    <div class="faq-answer"><p>4 Април 2026 година, от 9:00 до 18:00 часа, в Хотел Маринела, София.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Какво включва цената?</button>
+                    <div class="faq-answer"><p>Целия ден обучения, всички материали, кафе-паузи, обяд, сертификат и 1:1 консултация (за VIP билети).</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Мога ли да получа фактура?</button>
+                    <div class="faq-answer"><p>Да, разбира се. Свържи се с нас след закупуване на билет и ще ти изпратим фактура.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Какво ако не мога да дойда?</button>
+                    <div class="faq-answer"><p>Можеш да прехвърлиш билета си на друг човек или да го използваш за следващото ни събитие.</p></div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- CTA -->
-    <section class="cta-section" id="contact">
+    <section class="cta-section">
         <div class="container">
-            <h2 class="cta-title">Готов ли си да започнеш?</h2>
-            <p class="cta-subtitle">EFI търси хора, които искат реална кариера — не просто "опит".</p>
-            <a href="#" class="hero-cta">Свържи се с нас →</a>
+            <h2 class="section-title">Готов ли си да промениш бизнеса си?</h2>
+            <p>Остават по-малко от 50 места. Не чакай — местата свършват бързо.</p>
+            <a href="#pricing" class="hero-cta">Вземи билет сега →</a>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <div class="footer-logo">EFI</div>
-                    <p class="footer-text">
-                        European Fashion Institute — кариера-акселератор за модата.<br>
-                        Намери. Оформи. Позиционирай. Монетизирай.
-                    </p>
+            <div class="footer-content">
+                <div class="footer-logo">София Маркетинг Форум</div>
+                <div class="footer-links">
+                    <a href="#">За нас</a>
+                    <a href="#">Контакти</a>
+                    <a href="#">Политика</a>
                 </div>
-                
-                <div>
-                    <div class="footer-title">Направления</div>
-                    <ul class="footer-links">
-                        <li><a href="#">Обучение</a></li>
-                        <li><a href="#">Позициониране</a></li>
-                        <li><a href="#">Монетизация</a></li>
-                        <li><a href="#">Събития</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <div class="footer-title">За нас</div>
-                    <ul class="footer-links">
-                        <li><a href="#">Мисия</a></li>
-                        <li><a href="#">Екип</a></li>
-                        <li><a href="#">Контакти</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <div class="footer-title">Контакт</div>
-                    <ul class="footer-links">
-                        <li><a href="#">@eufashioninstitute</a></li>
-                        <li><a href="#">info@eufashioninstitute.com</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                © 2026 European Fashion Institute. Всички права запазени.
             </div>
         </div>
     </footer>
 
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                btn.parentElement.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>
