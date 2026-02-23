@@ -161,7 +161,7 @@
                 <span class="logo-mark" aria-hidden="true"></span>
                 <span class="logo-text">Business Lady Conference</span>
             </a>
-            <a class="topbar-cta" href="#apply">Кандидатствай</a>
+            <a class="topbar-cta" href="./survey.html">Кандидатствай</a>
         </div>
     </header>
 
@@ -189,7 +189,7 @@
                 </div>
             </div>
 
-            <a href="#apply" class="hero-cta">КАНДИДАТСТВАЙ ЗА МЯСТО →</a>
+            <a href="./survey.html" class="hero-cta">КАНДИДАТСТВАЙ ЗА МЯСТО →</a>
             <p class="hero-seats">🎟 220 места | целодневно събитие на живо | София</p>
             <p class="hero-date">📅 16 Май 2026 | Business Lady Conference</p>
         </div>
@@ -271,13 +271,13 @@
                     <div class="speaker-avatar"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></div>
                     <h3 class="speaker-name">Габриела Великова</h3>
                     <p class="speaker-title">Комуникация, решения и вътрешни модели</p>
-                    <p class="speaker-bio">Работи с модели на поведение и комуникация, които директно влияят на решенията, резултатите и финансовия успех. Без магия — ясни рамки за действие.</p>
+                    <p class="speaker-bio">Работи с подсъзнателни модели, емоционални реакции и вътрешни конфликти, които влияят на решенията в бизнеса и финансовия успех. Помага на предприемачи и експерти да действат уверено, да взимат по-смели решения и да спрат да се ограничават сами.</p>
                 </div>
                 <div class="speaker-card">
                     <div class="speaker-avatar"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></div>
                     <h3 class="speaker-name">Симеон Димитров</h3>
                     <p class="speaker-title">AI системи за бизнес (реални внедрявания)</p>
-                    <p class="speaker-bio">Показва къде AI носи пари и къде е загуба на време. Модели за повече клиенти, по-висока конверсия и по-малко ръчен труд — в процес и структура.</p>
+                    <p class="speaker-bio">Изгражда реално работещи AI системи за бизнес (не демонстрации). Показва къде AI носи пари, време и мащаб — и къде е загуба на ресурс. Внедрява софтуери и автоматизации, които спестяват ръчен труд, ускоряват маркетинг и взимане на решения, без да обезценяват експертизата — а я умножават.</p>
                 </div>
             </div>
         </div>
@@ -301,52 +301,58 @@
         </div>
     </section>
 
-    <!-- APPLY -->
+    <!-- APPLY / PROCESS -->
     <section class="section pricing" id="apply">
         <div class="container">
             <div class="text-center">
                 <span class="section-label">Кандидатстване</span>
                 <h2 class="section-title">Кандидатствай за място</h2>
-                <p class="section-subtitle">Попълни формата. Екипът ни ще се свърже с теб за потвърждение и следващи стъпки.</p>
+                <p class="section-subtitle">
+                    Тъй като целта е филтрация, кандидатстването е чрез кратка анкета.
+                    След разговор с одобрените кандидати, ще получиш линк към втора страница с пакети и плащане.
+                </p>
             </div>
 
             <div class="pricing-grid">
-                <div class="price-card featured" style="text-align:left; max-width: 800px; margin: 0 auto;">
-                    <form id="applyForm">
-                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                            <div>
-                                <label style="display:block; font-size:0.9rem; color: var(--text-secondary); margin-bottom:0.4rem;">Име*</label>
-                                <input name="name" required placeholder="Име и фамилия" style="width:100%; padding:0.9rem 1rem; border-radius:12px; border:1px solid rgba(255,255,255,0.12); background:rgba(255,255,255,0.03); color:var(--text-primary);" />
-                            </div>
-                            <div>
-                                <label style="display:block; font-size:0.9rem; color: var(--text-secondary); margin-bottom:0.4rem;">Имейл*</label>
-                                <input name="email" type="email" required placeholder="name@company.com" style="width:100%; padding:0.9rem 1rem; border-radius:12px; border:1px solid rgba(255,255,255,0.12); background:rgba(255,255,255,0.03); color:var(--text-primary);" />
-                            </div>
-                            <div>
-                                <label style="display:block; font-size:0.9rem; color: var(--text-secondary); margin-bottom:0.4rem;">Телефон*</label>
-                                <input name="phone" required placeholder="+359…" style="width:100%; padding:0.9rem 1rem; border-radius:12px; border:1px solid rgba(255,255,255,0.12); background:rgba(255,255,255,0.03); color:var(--text-primary);" />
-                            </div>
-                            <div>
-                                <label style="display:block; font-size:0.9rem; color: var(--text-secondary); margin-bottom:0.4rem;">Фирма*</label>
-                                <input name="company" required placeholder="Име на фирма" style="width:100%; padding:0.9rem 1rem; border-radius:12px; border:1px solid rgba(255,255,255,0.12); background:rgba(255,255,255,0.03); color:var(--text-primary);" />
-                            </div>
-                        </div>
-
-                        <div style="margin-top:1rem;">
-                            <label style="display:block; font-size:0.9rem; color: var(--text-secondary); margin-bottom:0.4rem;">Какво очаквате да постигнете от участието си?*</label>
-                            <textarea name="why" required rows="5" placeholder="Опишете с 2–3 изречения…" style="width:100%; padding:0.9rem 1rem; border-radius:12px; border:1px solid rgba(255,255,255,0.12); background:rgba(255,255,255,0.03); color:var(--text-primary); resize: vertical;"></textarea>
-                        </div>
-
-                        <div style="margin-top:1.25rem; display:flex; gap:1rem; flex-wrap:wrap; align-items:center;">
-                            <button type="submit" class="hero-cta" style="border-radius:14px;">Изпрати кандидатура →</button>
-                            <span id="applyStatus" style="font-size:0.9rem; color: var(--text-secondary);"></span>
-                        </div>
-
-                        <p style="margin-top:1rem; font-size:0.8rem; color: var(--text-muted);">
-                            * След изпращане ще получиш потвърждение. (Интеграцията за събиране на кандидатури може да бъде свързана със Stripe/GHL/CRM на следващ етап.)
+                <div class="price-card featured" style="max-width: 800px; margin: 0 auto;">
+                    <div style="text-align:center;">
+                        <a href="./survey.html" class="hero-cta" style="border-radius:14px;">КАНДИДАТСТВАЙ ЗА МЯСТО →</a>
+                        <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+                            * Анкетата отнема ~2 минути.
                         </p>
-                    </form>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOR WHO / FILTER -->
+    <section class="section problem">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-label">Филтър</span>
+                <h2 class="section-title">За кого е / не е</h2>
+                <p class="section-subtitle">Това е събитие за резултат, не за впечатления.</p>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-card-icon"><svg viewBox="0 0 24 24"><path d="M20 6 9 17 4 12"></path></svg></div>
+                    <h3>Това е за теб, ако:</h3>
+                    <p>Имаш бизнес или експертиза, мислиш в печалби (не в лайкове) и искаш AI като инструмент за пари.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-card-icon"><svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"></path></svg></div>
+                    <h3>Не е за теб, ако:</h3>
+                    <p>Търсиш магия, бързи трикове или си пасивен наблюдател без желание да внедряваш и действаш.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"></path></svg></div>
+                    <h3>Заедно:</h3>
+                    <p><span class="text-gold" style="font-weight:700;">повече приходи</span> + <span class="text-gold" style="font-weight:700;">по-ниски разходи</span> = <span class="text-gold" style="font-weight:700;">повече печалба</span></p>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 2.5rem;">
+                <a href="./survey.html" class="hero-cta">КАНДИДАТСТВАЙ ЗА МЯСТО →</a>
             </div>
         </div>
     </section>
@@ -385,7 +391,7 @@
         <div class="container">
             <h2 class="section-title">Това не е билет за събитие.</h2>
             <p>Това е бизнес решение. Ако търсиш шум — не е за теб. Ако търсиш печалба — кандидатствай за място.</p>
-            <a href="#apply" class="hero-cta">Кандидатствай за място →</a>
+            <a href="./survey.html" class="hero-cta">Кандидатствай за място →</a>
         </div>
     </section>
 
