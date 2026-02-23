@@ -4,106 +4,242 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Business Lady Bulgaria Academy | Кандидатстване</title>
-  <meta name="description" content="Business Lady Bulgaria Academy — безплатна (с кандидатстване) програма за жени, които искат позиция, доход и влияние." />
+  <meta name="description" content="Business Lady Bulgaria Academy — програма (с кандидатстване) за жени, които искат позиция, доход и влияние." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * { margin:0; padding:0; box-sizing:border-box; }
     :root {
-      --bg-primary: #0a0a0a;
-      --bg-secondary: #141414;
-      --bg-card: #1a1a1a;
+      --bg-primary:#0a0a0a;
+      --bg-secondary:#141414;
+      --bg-card:#1a1a1a;
       --accent-gold:#E91E8C;
       --accent-gold-light:#FF4DA6;
-      --accent-orange: #FF6B35;
-      --text-primary: #ffffff;
-      --text-secondary: #a0a0a0;
-      --text-muted: #666666;
-      --font-main: 'Inter', -apple-system, sans-serif;
-      --font-display: 'Playfair Display', Georgia, serif;
+      --accent-orange:#FF6B35;
+      --text-primary:#ffffff;
+      --text-secondary:#a0a0a0;
+      --text-muted:#666666;
+      --font-main:'Inter', -apple-system, sans-serif;
+      --font-display:'Playfair Display', Georgia, serif;
     }
 
+    html { scroll-behavior: smooth; }
     body { font-family: var(--font-main); background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; }
-    .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
+    .container { max-width: 1100px; margin:0 auto; padding: 0 2rem; }
+    .section { padding: 5rem 0; }
 
-    .top { padding: 1.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); background: rgba(10,10,10,0.6); position: sticky; top:0; backdrop-filter: blur(12px); }
-    .logo { font-family: var(--font-display); font-weight: 800; letter-spacing: 0.02em; }
-    .card { margin: 2.2rem auto; background: var(--bg-card); border: 1px solid rgba(255,255,255,0.06); border-radius: 20px; padding: 2rem; }
+    /* Topbar */
+    .topbar { position: fixed; top:0; left:0; right:0; z-index:50; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      background: rgba(10,10,10,0.55); border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .topbar-inner { max-width: 1100px; margin:0 auto; padding: 1.1rem 2rem; display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+    .logo { display:inline-flex; align-items:center; gap:0.6rem; text-decoration:none; }
+    .logo-mark { width:28px; height:28px; border-radius:10px; background: linear-gradient(135deg, rgba(233,30,140,0.9), rgba(255,107,53,0.7)); box-shadow: 0 10px 30px rgba(233,30,140,0.22); }
+    .logo-text { font-family: var(--font-display); font-weight: 800; letter-spacing: 0.02em; color: var(--text-primary); font-size: 1.05rem; }
 
-    h1 { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.7rem, 3vw, 2.2rem); margin-bottom: 0.5rem; }
-    .sub { color: var(--text-secondary); margin-bottom: 1.25rem; }
+    .nav { display:flex; gap: 1rem; align-items:center; justify-content:center; flex: 1; }
+    .nav a { color: var(--text-secondary); text-decoration:none; font-weight:800; font-size:0.85rem; letter-spacing:0.06em; text-transform: uppercase; }
+    .nav a:hover { color: var(--text-primary); }
 
-    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .cta { display:inline-flex; align-items:center; justify-content:center; padding: 0.75rem 1.2rem; border-radius: 999px;
+      font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; text-decoration:none;
+      color: var(--bg-primary); background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
+      box-shadow: 0 10px 30px rgba(233,30,140,0.22);
+    }
+
+    /* Hero */
+    .hero { min-height: 100vh; display:flex; align-items:center; justify-content:center; padding-top: 86px;
+      background: radial-gradient(ellipse at 30% 20%, rgba(233,30,140,0.10) 0%, transparent 50%),
+                  radial-gradient(ellipse at 70% 80%, rgba(255,107,53,0.05) 0%, transparent 40%),
+                  var(--bg-primary);
+    }
+    .hero-content { text-align:center; padding: 2rem; }
+    h1 { font-family: var(--font-display); font-size: clamp(2.2rem, 6vw, 4.2rem); font-weight: 800; line-height: 1.1; }
+    .sub { margin-top: 1.1rem; color: var(--text-secondary); max-width: 860px; margin-left:auto; margin-right:auto; font-size: 1.05rem; }
+
+    .pill { display:inline-block; margin-top: 1.4rem; padding: 0.55rem 1rem; border-radius: 999px; border: 1px solid rgba(233,30,140,0.25);
+      background: rgba(233,30,140,0.10); color: var(--accent-gold-light); font-weight: 800; letter-spacing:0.08em; text-transform: uppercase; font-size: 0.75rem;
+    }
+
+    /* Cards */
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-top: 2.2rem; }
+    .card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 18px; padding: 1.6rem; text-align:left; }
+    .card h3 { font-size: 1.1rem; margin-bottom: 0.4rem; }
+    .card p { color: var(--text-secondary); font-size: 0.95rem; }
+
+    /* Lists */
+    .list { margin-top: 1.4rem; display:grid; gap: 0.75rem; }
+    .list-item { padding: 1rem 1.1rem; border-radius: 16px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); color: var(--text-secondary); }
+    .list-item strong { color: var(--text-primary); }
+
+    .section-title { font-family: var(--font-display); font-size: clamp(1.7rem, 4vw, 2.5rem); font-weight: 800; margin-bottom: 0.75rem; }
+    .section-sub { color: var(--text-secondary); max-width: 860px; }
+
+    /* Form */
+    .form-wrap { max-width: 900px; margin: 0 auto; }
+    .form-card { margin-top: 1.5rem; background: var(--bg-card); border: 1px solid rgba(255,255,255,0.06); border-radius: 20px; padding: 2rem; }
     label { display:block; font-size:0.9rem; color: var(--text-secondary); margin-bottom:0.4rem; }
     input, textarea { width:100%; padding:0.9rem 1rem; border-radius:12px; border:1px solid rgba(255,255,255,0.12); background:rgba(255,255,255,0.03); color:var(--text-primary); outline: none; }
     textarea { resize: vertical; }
-
+    .form-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
     .btn { display:inline-flex; align-items:center; justify-content:center; gap:0.6rem; padding: 1rem 1.4rem; border-radius: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; border: none; cursor: pointer; color: var(--bg-primary);
       background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
       box-shadow: 0 10px 30px rgba(233,30,140,0.22);
     }
-
     .muted { margin-top: 0.85rem; font-size: 0.8rem; color: var(--text-muted); }
     .status { margin-left: 0.75rem; color: var(--text-secondary); font-size: 0.95rem; }
     .honeypot { display:none !important; }
 
-    @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } .card{padding:1.4rem;} }
+    .footer { padding: 2.5rem 0; border-top: 1px solid rgba(255,255,255,0.06); color: var(--text-muted); }
+
+    @media (max-width: 920px) { .form-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 720px) {
+      .container{padding:0 1.25rem;}
+      .nav{display:none;}
+      .topbar-inner{padding: 1rem 1.25rem;}
+      .form-card{padding:1.4rem;}
+    }
   </style>
 </head>
 <body>
-  <div class="top">
-    <div class="container" style="display:flex; justify-content:space-between; align-items:center; gap:1rem;">
-      <div class="logo">Business Lady Bulgaria</div>
-      <a href="./index.html" style="color: var(--text-secondary); text-decoration:none; font-weight:600;">← Начало</a>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="logo" href="./index.html">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span class="logo-text">Business Lady Bulgaria</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="./academy.html">Academy</a>
+        <a href="./community.html">Общност</a>
+        <a href="./conference.html">Conference</a>
+        <a href="./awards.html">Awards</a>
+      </nav>
+      <a class="cta" href="#apply">Кандидатствай</a>
     </div>
-  </div>
+  </header>
 
-  <div class="container">
-    <div class="card">
-      <h1>Кандидатствай за участие в Academy (безплатна)</h1>
-      <p class="sub">Безплатна програма (с кандидатстване) за жени, които искат позиция, доход и влияние.</p>
-
-      <form id="academyForm">
-        <input class="honeypot" name="website" tabindex="-1" autocomplete="off" />
-
-        <div class="grid">
-          <div>
-            <label>Име*</label>
-            <input name="name" required placeholder="Име и фамилия" />
-          </div>
-          <div>
-            <label>Имейл*</label>
-            <input name="email" type="email" required placeholder="name@company.com" />
-          </div>
-          <div>
-            <label>Телефон*</label>
-            <input name="phone" required placeholder="+359…" />
-          </div>
-          <div>
-            <label>Бизнес / фирма*</label>
-            <input name="company" required placeholder="Име на фирма / дейност" />
-          </div>
+  <!-- HERO -->
+  <main class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="pill">Academy</div>
+        <h1>Business Lady Bulgaria Academy</h1>
+        <p class="sub">Програма (с кандидатстване) за жени, които искат позиция, доход и влияние.</p>
+        <div style="margin-top: 1.75rem; display:flex; gap: 1rem; justify-content:center; flex-wrap:wrap;">
+          <a class="cta" href="#apply">Кандидатствай за участие →</a>
+          <a class="btn" style="text-decoration:none;" href="./index.html">Виж Business Lady Bulgaria →</a>
         </div>
-
-        <div style="margin-top:1rem;">
-          <label>Какво искаш да постигнеш в следващите 6–12 месеца?*</label>
-          <textarea name="why" required rows="6" placeholder="Опиши целите си с 2–5 изречения…"></textarea>
-        </div>
-
-        <div style="margin-top:1.25rem; display:flex; flex-wrap:wrap; align-items:center; gap:0.75rem;">
-          <button class="btn" type="submit">Изпрати кандидатура →</button>
-          <span id="status" class="status"></span>
-        </div>
-
-        <p class="muted">* Тази форма е MVP. Следващ етап: автоматично записване в CRM и обратна връзка по имейл.</p>
-      </form>
+      </div>
     </div>
-  </div>
+  </main>
+
+  <!-- PROBLEM -->
+  <section class="section" style="background: var(--bg-secondary);">
+    <div class="container">
+      <h2 class="section-title">Какво решава Academy</h2>
+      <p class="section-sub">Не търсиш мотивация. Търсиш структура, позиция и среда за резултати.</p>
+      <div class="list">
+        <div class="list-item">– липса на ясно <strong>позициониране</strong> и оферта, която продава</div>
+        <div class="list-item">– много усилия, но без <strong>устойчив растеж</strong></div>
+        <div class="list-item">– шум от “съвети”, без <strong>работеща среда</strong> и партньорства</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUE -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Какво получаваш</h2>
+      <div class="grid">
+        <div class="card"><h3>Позиция</h3><p>ясно кой си, за кого си и защо клиентът избира теб.</p></div>
+        <div class="card"><h3>Доход</h3><p>фокус върху марж, продажба и решения, които носят пари.</p></div>
+        <div class="card"><h3>Влияние</h3><p>видимост като следствие от резултат, не от участие.</p></div>
+        <div class="card"><h3>Среда</h3><p>мрежа и партньорства, които движат бизнес.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS (short) -->
+  <section class="section" style="background: var(--bg-secondary);">
+    <div class="container">
+      <h2 class="section-title">Как работи</h2>
+      <div class="list">
+        <div class="list-item"><strong>1) Кандидатстваш</strong> (кратка форма)</div>
+        <div class="list-item"><strong>2) Подбор</strong> (ако е нужно — кратък разговор)</div>
+        <div class="list-item"><strong>3) Работа по реални казуси</strong> (позициониране, оферта, процеси)</div>
+        <div class="list-item"><strong>4) След резултат</strong> — отключваш следващи възможности (Awards / Conference)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOR WHO -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">За кого е</h2>
+      <div class="grid">
+        <div class="card"><h3>За теб е, ако</h3><p>имаш бизнес или експертиза и искаш да изградиш позиция, доход и влияние с ясна структура.</p></div>
+        <div class="card"><h3>Не е за теб, ако</h3><p>търсиш аплодисменти, “тайни формули” или networking без посока и работа.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLY FORM -->
+  <section class="section" id="apply" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="form-wrap">
+        <h2 class="section-title" style="text-align:center;">Кандидатствай за участие</h2>
+        <p class="section-sub" style="text-align:center; margin: 0 auto;">Попълни формата. Ще получиш потвърждение и следващи стъпки.</p>
+
+        <div class="form-card">
+          <form id="academyForm">
+            <input class="honeypot" name="website" tabindex="-1" autocomplete="off" />
+
+            <div class="form-grid">
+              <div>
+                <label>Име*</label>
+                <input name="name" required placeholder="Име и фамилия" />
+              </div>
+              <div>
+                <label>Имейл*</label>
+                <input name="email" type="email" required placeholder="name@company.com" />
+              </div>
+              <div>
+                <label>Телефон*</label>
+                <input name="phone" required placeholder="+359…" />
+              </div>
+              <div>
+                <label>Бизнес / фирма*</label>
+                <input name="company" required placeholder="Име на фирма / дейност" />
+              </div>
+            </div>
+
+            <div style="margin-top:1rem;">
+              <label>Какво искаш да постигнеш в следващите 6–12 месеца?*</label>
+              <textarea name="why" required rows="6" placeholder="Опиши целите си с 2–5 изречения…"></textarea>
+            </div>
+
+            <div style="margin-top:1.25rem; display:flex; flex-wrap:wrap; align-items:center; gap:0.75rem;">
+              <button class="btn" type="submit">Изпрати кандидатура →</button>
+              <span id="status" class="status"></span>
+            </div>
+
+            <p class="muted">* Тази форма е MVP. Следващ етап: автоматично записване в CRM и обратна връзка по имейл.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">© <span id="y"></span> Business Lady Bulgaria</div>
+  </footer>
 
   <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
     const form = document.getElementById('academyForm');
     const statusEl = document.getElementById('status');
 
