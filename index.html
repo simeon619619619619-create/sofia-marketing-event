@@ -31,9 +31,18 @@
         .section { padding: 6rem 0; }
         .text-center { text-align: center; }
         .text-gold { color: var(--accent-gold); }
-        
+
+        /* Topbar */
+        .topbar { position: fixed; top: 0; left: 0; right: 0; z-index: 50; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background: rgba(10, 10, 10, 0.55); border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
+        .topbar-inner { max-width: 1100px; margin: 0 auto; padding: 1.1rem 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+        .logo { display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+        .logo-mark { width: 28px; height: 28px; border-radius: 10px; background: linear-gradient(135deg, rgba(212, 175, 55, 0.9), rgba(255, 107, 53, 0.7)); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.18); }
+        .logo-text { font-family: var(--font-display); font-weight: 800; letter-spacing: 0.02em; color: var(--text-primary); font-size: 1.05rem; }
+        .topbar-cta { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.75rem 1.2rem; border-radius: 999px; text-decoration: none; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--bg-primary); background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.18); }
+        .topbar-cta:hover { transform: translateY(-1px); }
+
         /* Hero */
-        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; background: radial-gradient(ellipse at 30% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 50%), radial-gradient(ellipse at 70% 80%, rgba(255, 107, 53, 0.05) 0%, transparent 40%), var(--bg-primary); }
+        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; padding-top: 86px; background: radial-gradient(ellipse at 30% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 50%), radial-gradient(ellipse at 70% 80%, rgba(255, 107, 53, 0.05) 0%, transparent 40%), var(--bg-primary); }
         .hero-content { position: relative; z-index: 2; text-align: center; padding: 2rem; }
         .hero-badges { display: flex; justify-content: center; gap: 1rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
         .badge { padding: 0.6rem 1.4rem; background: rgba(212, 175, 55, 0.1); border: 1px solid rgba(212, 175, 55, 0.25); border-radius: 50px; font-size: 0.85rem; font-weight: 600; color: var(--accent-gold-light); text-transform: uppercase; letter-spacing: 0.05em; }
@@ -144,6 +153,17 @@
     </style>
 </head>
 <body>
+
+    <!-- TOPBAR / LOGO -->
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a class="logo" href="#">
+                <span class="logo-mark" aria-hidden="true"></span>
+                <span class="logo-text">Business Lady Conference</span>
+            </a>
+            <a class="topbar-cta" href="#apply">Кандидатствай</a>
+        </div>
+    </header>
 
     <!-- HERO -->
     <section class="hero">
