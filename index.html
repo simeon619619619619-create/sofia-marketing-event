@@ -44,6 +44,18 @@
         /* Hero */
         .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; padding-top: 86px; background: radial-gradient(ellipse at 30% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 50%), radial-gradient(ellipse at 70% 80%, rgba(255, 107, 53, 0.05) 0%, transparent 40%), var(--bg-primary); }
         .hero-content { position: relative; z-index: 2; text-align: center; padding: 2rem; }
+
+        /* Admin uploader (client-side gated) */
+        .admin-upload { display: none; max-width: 760px; margin: 0 auto 1.25rem; text-align: left; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1rem; }
+        .admin-upload.active { display: block; }
+        .admin-upload h3 { font-size: 0.95rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent-gold-light); margin-bottom: 0.35rem; }
+        .admin-upload p { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.75rem; }
+        .admin-upload .row { display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center; }
+        .admin-upload input[type="file"] { width: 100%; color: var(--text-secondary); }
+        .admin-upload .meta { margin-top: 0.6rem; font-size: 0.8rem; color: var(--text-muted); }
+        .admin-upload video { width: 100%; max-height: 260px; margin-top: 0.75rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); background: rgba(0,0,0,0.35); }
+        .admin-upload .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.65rem 0.9rem; border-radius: 999px; font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; border: 1px solid rgba(212,175,55,0.35); color: var(--accent-gold-light); background: rgba(212,175,55,0.08); cursor: pointer; }
+        .admin-upload .btn:hover { background: rgba(212,175,55,0.12); }
         .hero-badges { display: flex; justify-content: center; gap: 1rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
         .badge { padding: 0.6rem 1.4rem; background: rgba(212, 175, 55, 0.1); border: 1px solid rgba(212, 175, 55, 0.25); border-radius: 50px; font-size: 0.85rem; font-weight: 600; color: var(--accent-gold-light); text-transform: uppercase; letter-spacing: 0.05em; }
         .hero-title { font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800; line-height: 1.15; margin-bottom: 1.5rem; }
@@ -184,6 +196,19 @@
                     <li>намалят разходите</li>
                     <li>печелят повече със същия или по-малък екип</li>
                 </ul>
+
+                <!-- Admin-only: upload hero clip (local preview) -->
+                <div id="adminUpload" class="admin-upload">
+                    <h3>Admin upload</h3>
+                    <p>Качи клип до 100MB (само за теб). Това е локален preview; после можем да го качим в /videos и да го вържем като hero background.</p>
+                    <div class="row">
+                        <input id="adminClip" type="file" accept="video/*" />
+                        <button id="adminLogout" class="btn" type="button">Hide</button>
+                    </div>
+                    <div id="adminMeta" class="meta"></div>
+                    <video id="adminPreview" controls playsinline muted style="display:none"></video>
+                </div>
+
                 <div style="margin-top: 1.1rem; color: var(--text-muted); font-size: 0.95rem;">
                     📍 На сцена: <span class="text-gold" style="font-weight:700;">Теодора Русева</span>, <span class="text-gold" style="font-weight:700;">Габриела Великова</span> и <span class="text-gold" style="font-weight:700;">Симеон Димитров</span>
                 </div>
@@ -528,6 +553,60 @@
                 btn.parentElement.classList.toggle('active');
             });
         });
+
+        // Admin-only uploader (client-side gated)
+        // Toggle: Ctrl+Shift+A → prompt for passcode, stored in localStorage.
+        // Note: this is UX gating (not strong security). Real protection requires server-side auth.
+        (function(){
+            const adminKey = 'blc_admin_enabled';
+            const passcode = 'blc2026';
+            const wrap = document.getElementById('adminUpload');
+            const input = document.getElementById('adminClip');
+            const meta = document.getElementById('adminMeta');
+            const preview = document.getElementById('adminPreview');
+            const logout = document.getElementById('adminLogout');
+
+            function setEnabled(on){
+                if (!wrap) return;
+                if (on) wrap.classList.add('active'); else wrap.classList.remove('active');
+            }
+
+            setEnabled(localStorage.getItem(adminKey) === '1');
+
+            window.addEventListener('keydown', (e) => {
+                if (e.ctrlKey && e.shiftKey && (e.key === 'A' || e.key === 'a')) {
+                    const code = prompt('Admin passcode');
+                    if (code === passcode) {
+                        localStorage.setItem(adminKey, '1');
+                        setEnabled(true);
+                        alert('Admin upload enabled');
+                    } else {
+                        alert('Wrong passcode');
+                    }
+                }
+            });
+
+            if (logout) logout.addEventListener('click', () => {
+                localStorage.removeItem(adminKey);
+                setEnabled(false);
+            });
+
+            if (input) input.addEventListener('change', () => {
+                const file = input.files && input.files[0];
+                if (!file) return;
+                const max = 100 * 1024 * 1024;
+                if (file.size > max) {
+                    meta.textContent = 'Файлът е над 100MB. Компресирай/изрежи и пробвай пак.';
+                    input.value = '';
+                    preview.style.display = 'none';
+                    return;
+                }
+                meta.textContent = `Избран файл: ${file.name} (${Math.round(file.size/1024/1024)}MB)`;
+                const url = URL.createObjectURL(file);
+                preview.src = url;
+                preview.style.display = 'block';
+            });
+        })();
     </script>
 </body>
 </html>
