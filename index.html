@@ -1,732 +1,135 @@
 <!DOCTYPE html>
 <html lang="bg">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Lady Conference | Най-голямото маркетинг събитие за жени в България</title>
-    <meta name="description" content="Business Lady Conference — най-голямото маркетинг събитие за жени в България. 16 май 2026. Ограничени места (220). Кандидатствай за място.">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-    
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --bg-primary: #0a0a0a;
-            --bg-secondary: #141414;
-            --bg-card: #1a1a1a;
-            --accent-gold: #D4AF37;
-            --accent-gold-light: #F4C430;
-            --accent-orange: #FF6B35;
-            --text-primary: #ffffff;
-            --text-secondary: #a0a0a0;
-            --text-muted: #666666;
-            --font-main: 'Inter', -apple-system, sans-serif;
-            --font-display: 'Playfair Display', Georgia, serif;
-        }
-        html { scroll-behavior: smooth; }
-        body { font-family: var(--font-main); background-color: var(--bg-primary); color: var(--text-primary); line-height: 1.6; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
-        .section { padding: 6rem 0; }
-        .text-center { text-align: center; }
-        .text-gold { color: var(--accent-gold); }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Business Lady Bulgaria</title>
+  <meta name="description" content="Business Lady Bulgaria — платформа за жени в бизнес. Виж Business Lady Conference и кандидатствай за място." />
 
-        /* Topbar */
-        .topbar { position: fixed; top: 0; left: 0; right: 0; z-index: 50; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background: rgba(10, 10, 10, 0.55); border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
-        .topbar-inner { max-width: 1100px; margin: 0 auto; padding: 1.1rem 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-        .logo { display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none; }
-        .logo-mark { width: 28px; height: 28px; border-radius: 10px; background: linear-gradient(135deg, rgba(212, 175, 55, 0.9), rgba(255, 107, 53, 0.7)); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.18); }
-        .logo-text { font-family: var(--font-display); font-weight: 800; letter-spacing: 0.02em; color: var(--text-primary); font-size: 1.05rem; }
-        .topbar-cta { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.75rem 1.2rem; border-radius: 999px; text-decoration: none; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--bg-primary); background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.18); }
-        .topbar-cta:hover { transform: translateY(-1px); }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 
-        /* Hero */
-        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; padding-top: 86px; background: radial-gradient(ellipse at 30% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 50%), radial-gradient(ellipse at 70% 80%, rgba(255, 107, 53, 0.05) 0%, transparent 40%), var(--bg-primary); overflow: hidden; }
-        .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; filter: saturate(1.05) contrast(1.05); opacity: 0.35; }
-        .hero::after { content: ""; position: absolute; inset: 0; z-index: 1; background: radial-gradient(ellipse at 50% 30%, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.75) 55%, rgba(0,0,0,0.92) 100%); }
-        .hero-content { position: relative; z-index: 2; text-align: center; padding: 2rem; }
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    :root {
+      --bg-primary:#0a0a0a;
+      --bg-secondary:#141414;
+      --bg-card:#1a1a1a;
+      --accent-gold:#D4AF37;
+      --accent-gold-light:#F4C430;
+      --accent-orange:#FF6B35;
+      --text-primary:#ffffff;
+      --text-secondary:#a0a0a0;
+      --text-muted:#666666;
+      --font-main:'Inter', -apple-system, sans-serif;
+      --font-display:'Playfair Display', Georgia, serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-main); background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
 
-        /* Admin uploader (client-side gated) */
-        .admin-upload { display: none; max-width: 760px; margin: 0 auto 1.25rem; text-align: left; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1rem; }
-        .admin-upload.active { display: block; }
-        .admin-upload h3 { font-size: 0.95rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent-gold-light); margin-bottom: 0.35rem; }
-        .admin-upload p { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.75rem; }
-        .admin-upload .row { display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center; }
-        .admin-upload input[type="file"] { width: 100%; color: var(--text-secondary); }
-        .admin-upload .meta { margin-top: 0.6rem; font-size: 0.8rem; color: var(--text-muted); }
-        .admin-upload video { width: 100%; max-height: 260px; margin-top: 0.75rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); background: rgba(0,0,0,0.35); }
-        .admin-upload .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.65rem 0.9rem; border-radius: 999px; font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; border: 1px solid rgba(212,175,55,0.35); color: var(--accent-gold-light); background: rgba(212,175,55,0.08); cursor: pointer; }
-        .admin-upload .btn:hover { background: rgba(212,175,55,0.12); }
-        .hero-badges { display: flex; justify-content: center; gap: 1rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
-        .badge { padding: 0.6rem 1.4rem; background: rgba(212, 175, 55, 0.1); border: 1px solid rgba(212, 175, 55, 0.25); border-radius: 50px; font-size: 0.85rem; font-weight: 600; color: var(--accent-gold-light); text-transform: uppercase; letter-spacing: 0.05em; }
-        .hero-title { font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800; line-height: 1.15; margin-bottom: 1.5rem; }
-        .hero-title .highlight { color: var(--accent-gold); display: block; }
-        .hero-subtitle { font-size: clamp(1.1rem, 2vw, 1.4rem); color: var(--text-secondary); max-width: 600px; margin: 0 auto 2.5rem; }
-        .hero-cta { display: inline-flex; align-items: center; gap: 0.75rem; padding: 1.1rem 2.5rem; font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--bg-primary); background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%); border: none; border-radius: 60px; cursor: pointer; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 8px 30px rgba(212, 175, 55, 0.25); }
-        .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(212, 175, 55, 0.35); }
-        .hero-seats { margin-top: 1.5rem; font-size: 0.9rem; color: var(--accent-orange); font-weight: 500; }
-        .hero-date { margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted); }
-        
-        /* Sections */
-        .section-label { display: none !important; }
-        .solution .section-label { display: none !important; }
-        .section-title { font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 1rem; }
-        .section-subtitle { font-size: 1.1rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto 3rem; }
-        
-        /* Problem */
-        .problem { background: var(--bg-secondary); }
-        .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-        .problem-card { background: var(--bg-card); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 2rem; transition: all 0.3s ease; }
-        .problem-card:hover { border-color: rgba(255, 107, 53, 0.3); transform: translateY(-3px); }
-        .problem-card-icon { width: 48px; height: 48px; background: rgba(255, 107, 53, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; }
-        .problem-card-icon svg { width: 24px; height: 24px; stroke: var(--accent-orange); fill: none; stroke-width: 2; }
-        .problem-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem; }
-        .problem-card p { font-size: 0.95rem; color: var(--text-secondary); }
-        
-        /* Solution */
-        .solution { background: var(--bg-primary); }
-        .benefit-list { list-style: none; max-width: 700px; margin: 0 auto; }
-        .benefit-item { display: flex; align-items: flex-start; gap: 1.25rem; padding: 1.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
-        .benefit-check { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .benefit-check svg { width: 16px; height: 16px; stroke: var(--bg-primary); stroke-width: 3; }
-        .benefit-content h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 0.4rem; }
-        .benefit-content p { font-size: 0.95rem; color: var(--text-secondary); }
-        
-        /* Speakers */
-        .speakers { background: var(--bg-secondary); }
-        .speakers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .speaker-card { background: var(--bg-card); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 20px; padding: 2rem; text-align: center; transition: all 0.3s ease; }
-        .speaker-card:hover { border-color: rgba(212, 175, 55, 0.3); transform: translateY(-4px); }
-        .speaker-avatar { width: 100px; height: 100px; background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(255, 107, 53, 0.15)); border: 2px solid rgba(212, 175, 55, 0.3); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; }
-        .speaker-avatar svg { width: 50px; height: 50px; stroke: var(--accent-gold); fill: none; stroke-width: 1.5; }
-        .speaker-name { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--accent-gold); margin-bottom: 0.5rem; }
-        .speaker-title { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem; }
-        .speaker-bio { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
-        
-        /* Program */
-        .program { background: var(--bg-primary); }
-        .program-grid { display: grid; gap: 1rem; }
-        .program-item { background: var(--bg-card); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 1.75rem 2rem; display: flex; align-items: center; gap: 1.5rem; transition: all 0.3s ease; }
-        .program-item:hover { border-color: rgba(212, 175, 55, 0.25); transform: translateX(4px); }
-        .program-time { font-size: 0.85rem; font-weight: 600; color: var(--accent-gold); min-width: 80px; }
-        .program-content h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.3rem; }
-        .program-content p { font-size: 0.9rem; color: var(--text-secondary); }
-        
-        /* Pricing */
-        .pricing { background: var(--bg-secondary); }
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 800px; margin: 0 auto; }
-        .price-card { background: var(--bg-card); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 20px; padding: 2.5rem; text-align: center; transition: all 0.3s ease; position: relative; }
-        .price-card.featured { border-color: rgba(212, 175, 55, 0.4); background: linear-gradient(180deg, rgba(212, 175, 55, 0.08) 0%, var(--bg-card) 100%); }
-        .price-card.featured::before { content: 'Най-популярен'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); padding: 0.4rem 1rem; background: var(--accent-gold); color: var(--bg-primary); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; border-radius: 20px; }
-        .price-card:hover { transform: translateY(-5px); }
-        .price-name { font-size: 1.1rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
-        .price-amount { font-family: var(--font-display); font-size: 3rem; font-weight: 800; margin-bottom: 0.5rem; }
-        .price-amount .currency { font-size: 1.5rem; vertical-align: super; }
-        .price-card.featured .price-amount { color: var(--accent-gold); }
-        .price-desc { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 2rem; }
-        .price-features { list-style: none; text-align: left; margin-bottom: 2rem; }
-        .price-features li { padding: 0.6rem 0; font-size: 0.95rem; color: var(--text-secondary); display: flex; align-items: center; gap: 0.75rem; }
-        .price-features li::before { content: '✓'; color: var(--accent-gold); font-weight: 700; }
-        .price-cta { display: block; width: 100%; padding: 1rem; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-primary); background: transparent; border: 2px solid rgba(255, 255, 255, 0.15); border-radius: 60px; cursor: pointer; text-decoration: none; transition: all 0.3s ease; }
-        .price-cta:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
-        .price-card.featured .price-cta { background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light)); border: none; color: var(--bg-primary); }
-        
-        /* Steps / Process */
-        .steps { background: var(--bg-secondary); }
-        .steps .program-item { align-items: flex-start; }
+    .topbar { position: fixed; top:0; left:0; right:0; z-index:50; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      background: rgba(10,10,10,0.55); border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .topbar-inner { max-width: 1100px; margin:0 auto; padding: 1.1rem 2rem; display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+    .logo { display:inline-flex; align-items:center; gap:0.6rem; text-decoration:none; }
+    .logo-mark { width:28px; height:28px; border-radius:10px; background: linear-gradient(135deg, rgba(212,175,55,0.9), rgba(255,107,53,0.7)); box-shadow: 0 10px 30px rgba(212,175,55,0.18); }
+    .logo-text { font-family: var(--font-display); font-weight: 800; letter-spacing: 0.02em; color: var(--text-primary); font-size: 1.05rem; }
 
-        /* Bonuses */
-        .bonuses { background: var(--bg-primary); }
+    .nav { display:flex; gap: 1rem; align-items:center; }
+    .nav a { color: var(--text-secondary); text-decoration:none; font-weight:700; font-size:0.9rem; }
+    .nav a:hover { color: var(--text-primary); }
 
-        /* Location */
-        .location { background: var(--bg-secondary); }
-        .location-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 2rem; align-items: stretch; }
-        .location-card { background: var(--bg-card); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 18px; padding: 2rem; }
-        .location-card h3 { font-size: 1.15rem; margin-bottom: 0.8rem; }
-        .location-card p { color: var(--text-secondary); font-size: 0.95rem; }
-        .location-meta { display: grid; gap: 0.9rem; }
-        .meta-row { display: grid; grid-template-columns: 90px 1fr; gap: 0.9rem; color: var(--text-secondary); font-size: 0.95rem; }
-        .meta-row b { color: var(--text-primary); font-weight: 700; }
-        .map-link { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.9rem 1.2rem; border-radius: 14px; border: 1px solid rgba(212, 175, 55, 0.35); color: var(--accent-gold); text-decoration: none; font-weight: 700; margin-top: 1.25rem; }
-        .map-link:hover { border-color: rgba(212, 175, 55, 0.6); }
+    .cta { display:inline-flex; align-items:center; justify-content:center; padding: 0.75rem 1.2rem; border-radius: 999px;
+      font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; text-decoration:none;
+      color: var(--bg-primary); background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
+      box-shadow: 0 10px 30px rgba(212,175,55,0.18);
+    }
 
-        /* Contact */
-        .contact { background: var(--bg-primary); }
-        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 0 auto; }
-        .contact-card { background: var(--bg-card); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 1.75rem; }
-        .contact-card h3 { font-size: 1.05rem; margin-bottom: 0.5rem; }
-        .contact-card p { color: var(--text-secondary); font-size: 0.95rem; }
-        .contact-card a { color: var(--accent-gold); text-decoration: none; font-weight: 700; }
-        .contact-card a:hover { text-decoration: underline; }
+    .hero { min-height: 100vh; display:flex; align-items:center; justify-content:center; padding-top: 86px;
+      background: radial-gradient(ellipse at 30% 20%, rgba(212,175,55,0.08) 0%, transparent 50%),
+                  radial-gradient(ellipse at 70% 80%, rgba(255,107,53,0.05) 0%, transparent 40%),
+                  var(--bg-primary);
+    }
+    .hero-content { text-align:center; padding: 2rem; }
+    h1 { font-family: var(--font-display); font-size: clamp(2.2rem, 6vw, 4rem); font-weight: 800; line-height: 1.1; }
+    .highlight { color: var(--accent-gold); display:block; }
+    .sub { margin-top: 1rem; color: var(--text-secondary); max-width: 720px; margin-left:auto; margin-right:auto; font-size: 1.05rem; }
 
-        /* FAQ */
-        .faq { background: var(--bg-primary); }
-        .faq-list { max-width: 700px; margin: 0 auto; }
-        .faq-item { border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
-        .faq-question { width: 100%; padding: 1.5rem 0; background: none; border: none; text-align: left; font-size: 1.1rem; font-weight: 600; color: var(--text-primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
-        .faq-question::after { content: '+'; font-size: 1.5rem; color: var(--accent-gold); transition: transform 0.3s ease; }
-        .faq-item.active .faq-question::after { transform: rotate(45deg); }
-        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-        .faq-item.active .faq-answer { max-height: 200px; padding-bottom: 1.5rem; }
-        .faq-answer p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; }
-        
-        /* CTA */
-        .cta-section { background: radial-gradient(ellipse at 50% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 60%), var(--bg-secondary); text-align: center; padding: 8rem 0; }
-        .cta-section .section-title { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1.5rem; }
-        .cta-section p { font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 2.5rem; max-width: 500px; margin-left: auto; margin-right: auto; }
-        
-        /* Footer */
-        .footer { background: var(--bg-primary); padding: 3rem 0; border-top: 1px solid rgba(255, 255, 255, 0.05); }
-        .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-        .footer-logo { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--accent-gold); }
-        .footer-links { display: flex; gap: 2rem; }
-        .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: color 0.3s ease; }
-        .footer-links a:hover { color: var(--accent-gold); }
+    .cards { margin-top: 2.2rem; display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
+    .card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 18px; padding: 1.5rem; text-align:left; }
+    .card h3 { font-size: 1.1rem; margin-bottom: 0.4rem; }
+    .card p { color: var(--text-secondary); font-size: 0.95rem; }
+    .actions { margin-top: 1.5rem; display:flex; gap: 1rem; justify-content:center; flex-wrap:wrap; }
+    .btn-secondary { display:inline-flex; align-items:center; justify-content:center; padding: 0.9rem 1.4rem; border-radius: 999px;
+      text-decoration:none; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,0.14); color: var(--text-primary); background: transparent;
+    }
+    .btn-secondary:hover { border-color: rgba(212,175,55,0.55); color: var(--accent-gold-light); }
 
-        @media (max-width: 768px) {
-            .section { padding: 4rem 0; }
-            .problem-grid, .speakers-grid, .pricing-grid { grid-template-columns: 1fr; }
-            .program-item { flex-direction: column; text-align: center; gap: 0.75rem; }
-            .benefit-item { flex-direction: column; text-align: center; gap: 1rem; }
-            .location-grid { grid-template-columns: 1fr; }
-            .meta-row { grid-template-columns: 1fr; }
-            .footer-content { flex-direction: column; text-align: center; }
-            .footer-links { flex-wrap: wrap; justify-content: center; gap: 1rem 2rem; }
-        }
-    </style>
+    .footer { padding: 2.5rem 0; border-top: 1px solid rgba(255,255,255,0.06); color: var(--text-muted); }
+
+    @media (max-width: 720px) {
+      .topbar-inner { padding: 1rem 1.25rem; }
+      .container { padding: 0 1.25rem; }
+      .nav { display:none; }
+    }
+  </style>
 </head>
 <body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="logo" href="./index.html">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span class="logo-text">Business Lady Bulgaria</span>
+      </a>
+      <nav class="nav">
+        <a href="./conference.html">Конференция</a>
+        <a href="#about">За платформата</a>
+        <a href="#contact">Контакт</a>
+      </nav>
+      <a class="cta" href="./conference.html">Виж конференцията</a>
+    </div>
+  </header>
 
-    <!-- TOPBAR / LOGO -->
-    <header class="topbar">
-        <div class="topbar-inner">
-            <a class="logo" href="#">
-                <span class="logo-mark" aria-hidden="true"></span>
-                <span class="logo-text">Business Lady Conference</span>
-            </a>
-            <a class="topbar-cta" href="./survey.html">Кандидатствай</a>
+  <main class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Платформа за жени в бизнес<span class="highlight">+ събития, които носят печалба</span></h1>
+        <p class="sub">
+          Ако искаш повече приходи, по-висок марж и по-малко хаос — започни от Business Lady Conference.
+        </p>
+
+        <div class="actions">
+          <a class="cta" href="./conference.html">Business Lady Conference →</a>
+          <a class="btn-secondary" href="./survey.html">Кандидатствай за място →</a>
         </div>
-    </header>
 
-    <!-- HERO -->
-    <section class="hero">
-        <!-- Public hero clip -->
-        <video class="hero-video" autoplay muted loop playsinline preload="auto">
-            <source src="https://cdn.jsdelivr.net/gh/simeon619619619619-create/sofia-marketing-event@main/videos/hero_bg.mp4" type="video/mp4" />
-        </video>
-        <div class="hero-content">
-            <div class="hero-badges">
-                <span class="badge">220 места</span>
-                <span class="badge">София</span>
-                <span class="badge">16 Май 2026</span>
-            </div>
-            <h1 class="hero-title">AI не е бъдеще.<br><span class="highlight">AI е най-бързият начин да увеличиш печалбите си още тази година.</span></h1>
-            <p class="hero-subtitle">Събитието, което превръща AI в инструмент за повече печалба — не в шум и загуба на време.</p>
-
-                <!-- Admin-only: upload hero clip (local preview) -->
-                <div id="adminUpload" class="admin-upload">
-                    <h3>Admin upload</h3>
-                    <p>Качи клип до 100MB (само за теб). Това е локален preview (няма да се вижда от посетителите).</p>
-                    <div class="row">
-                        <input id="adminClip" type="file" accept="video/*" />
-                        <button id="adminLogout" class="btn" type="button">Hide</button>
-                    </div>
-                    <div id="adminMeta" class="meta"></div>
-                    <video id="adminPreview" controls playsinline muted style="display:none"></video>
-                </div>
-
-
-            <div style="max-width: 760px; margin: 0 auto 1.75rem; color: var(--text-secondary); font-size: 1.05rem;">
-                <h2 style="font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; margin: 0 0 0.75rem; color: var(--text-primary);">За кого е това събитие</h2>
-                <p style="margin: 0 0 0.75rem;">Събитие на живо за жени с бизнес, експертки и предприемачки, които искат да използват AI, за да:</p>
-                <ul style="margin: 0.25rem auto 0; max-width: 560px; text-align: left; padding-left: 1.2rem;">
-                    <li>увеличат приходите</li>
-                    <li>вдигнат маржа</li>
-                    <li>намалят разходите</li>
-                    <li>печелят повече със същия или по-малък екип</li>
-                </ul>
-
-                <div style="margin-top: 1.1rem; color: var(--text-muted); font-size: 0.95rem;">
-                    📍 На сцена: <span class="text-gold" style="font-weight:700;">Теодора Русева</span>, <span class="text-gold" style="font-weight:700;">Габриела Великова</span> и <span class="text-gold" style="font-weight:700;">Симеон Димитров</span>
-                </div>
-            </div>
-
-            <a href="./survey.html" class="hero-cta">КАНДИДАТСТВАЙ ЗА МЯСТО →</a>
-            <p class="hero-seats">🎟 220 места | целодневно събитие на живо | София</p>
-            <p class="hero-date">📅 16 Май 2026 | Business Lady Conference</p>
+        <div class="cards" id="about">
+          <div class="card">
+            <h3>Конференция</h3>
+            <p>16 май 2026 · София · 220 места · кандидатстване с филтър.</p>
+          </div>
+          <div class="card">
+            <h3>Общност</h3>
+            <p>За жени, които мислят в печалба (не в лайкове) и действат.</p>
+          </div>
+          <div class="card" id="contact">
+            <h3>Контакт</h3>
+            <p>Имейл/форма за контакт добавяме на следващ етап.</p>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </main>
 
-    <!-- PAS / PROBLEM IDENTIFICATION -->
-    <section class="section problem">
-        <div class="container">
-            <div class="text-center">
-                <span class="section-label">PAS</span>
-                <h2 class="section-title">Ако си честен със себе си, реалността изглежда така:</h2>
-                <p class="section-subtitle">Ти не си объркан. Ти си претоварен от шум.</p>
-            </div>
-            <div class="problem-grid">
-                <div class="problem-card"><h3>Печалбата не расте</h3><p>Имаш бизнес и приходи, но печалбата не расте със същото темпо.</p></div>
-                <div class="problem-card"><h3>Всичко минава през теб</h3><p>Всеки нов лев минава през теб. Това не е скалиране.</p></div>
-                <div class="problem-card"><h3>Маркетингът става все по-скъп</h3><p>Плащаш повече за внимание, а решенията отнемат време.</p></div>
-            </div>
-            <div class="text-center" style="margin-top: 2.5rem;">
-                <a href="./survey.html" class="hero-cta">КАНДИДАТСТВАЙ ЗА МЯСТО →</a>
-            </div>
-        </div>
-    </section>
+  <footer class="footer">
+    <div class="container">© <span id="y"></span> Business Lady Bulgaria</div>
+  </footer>
 
-    <!-- ANTI-BLAME -->
-    <section class="section solution">
-        <div class="container">
-            <div class="text-center">
-                <span class="section-label">ПРОБЛЕМЪТ НЕ СИ ТИ</span>
-                <h2 class="section-title">Важно е да го чуеш ясно</h2>
-                <p class="section-subtitle">Не си изостанал. Не си „изпуснал момента“. Не си слаб в бизнес мисленето.</p>
-            </div>
-            <ul class="benefit-list">
-                <li class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div><div class="benefit-content"><h3>Старият модел стана скъп</h3><p>Проблемът е, че старият модел вече е скъп за поддръжка.</p></div></li>
-                <li class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div><div class="benefit-content"><h3>AI не създава кризата</h3><p>AI просто я прави видима.</p></div></li>
-            </ul>
-            <div class="text-center" style="margin-top: 2.5rem;">
-                <a href="./survey.html" class="hero-cta">КАНДИДАТСТВАЙ ЗА МЯСТО →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- AGITATION -->
-    <section class="section problem">
-        <div class="container">
-            <div class="text-center">
-                <span class="section-label">AGITATION</span>
-                <h2 class="section-title">Какво се случва, ако не смениш модела</h2>
-                <p class="section-subtitle">Най-опасното: ще гледаш как други печелят повече със същите ресурси.</p>
-            </div>
-            <div class="problem-grid">
-                <div class="problem-card"><h3>Повече работа, същите пари</h3><p>Ще работиш повече за същите пари.</p></div>
-
-                <div class="problem-card"><h3>Ръчни процеси</h3><p>Ще губиш пари в ръчни процеси.</p></div>
-                <div class="problem-card"><h3>Изпуснати сделки</h3><p>Ще изпускаш сделки, защото си бавен.</p></div>
-            </div>
-            <div class="text-center" style="margin-top: 2.5rem;">
-                <a href="./survey.html" class="hero-cta">КАНДИДАТСТВАЙ ЗА МЯСТО →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- REFRAME -->
-    <section class="section solution">
-        <div class="container">
-            <div class="text-center">
-                <span class="section-label">INTEREST</span>
-                <h2 class="section-title">Истината: AI не носи пари. Моделът носи пари.</h2>
-                <p class="section-subtitle">AI просто го ускорява.</p>
-            </div>
-            <ul class="benefit-list">
-                <li class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div><div class="benefit-content"><h3>Знаеш какъв бизнес градиш</h3><p>Ясна структура, не хаос.</p></div></li>
-                <li class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div><div class="benefit-content"><h3>Знаеш какво продаваш и на кого</h3><p>Оферта + позициониране, които свалят ценовите възражения.</p></div></li>
-                <li class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div><div class="benefit-content"><h3>Знаеш кои процеси ядат печалбата</h3><p>И кои да автоматизираш първи.</p></div></li>
-                <li class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div><div class="benefit-content"><h3>Знаеш какво да спреш</h3><p>Кое не носи пари, но ти изяжда време и внимание.</p></div></li>
-                <li class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div><div class="benefit-content"><h3>Имаш яснота кое се мери</h3><p>Показатели за печалба и марж, не vanity метрики.</p></div></li>
-                <li class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div><div class="benefit-content"><h3>Имаш 90-дневен фокус</h3><p>Какво да внедриш първо, за да има реален ефект в резултатите.</p></div></li>
-                <li class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div><div class="benefit-content"><h3>AI ти е като служител</h3><p>Пакетиран в процеси — не като „играчка“ за чатене.</p></div></li>
-            </ul>
-            <div class="text-center" style="margin-top: 2.5rem;">
-                <a href="./survey.html" class="hero-cta">КАНДИДАТСТВАЙ ЗА МЯСТО →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONCRETE VALUE -->
-    <section class="section solution">
-        <div class="container">
-            <div class="text-center">
-                <span class="section-label">CONCRETE VALUE</span>
-                <h2 class="section-title">Какво реално ще вземеш от този ден</h2>
-                <p class="section-subtitle">Всичко е подчинено на едно: повече пари с по-малко излишен разход.</p>
-            </div>
-            <ul class="benefit-list">
-                <li class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div><div class="benefit-content"><h3>Яснота къде губиш пари</h3><p>Къде изтичат ресурсите ти в момента.</p></div></li>
-                <li class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div><div class="benefit-content"><h3>План за повече печалба</h3><p>Как можеш да изкараш повече без да работиш повече.</p></div></li>
-                <li class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div><div class="benefit-content"><h3>Приоритети за автоматизация</h3><p>Кои процеси да автоматизираш първи.</p></div></li>
-                <li class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div><div class="benefit-content"><h3>Маркетинг + AI за конверсия</h3><p>Как AI влиза в маркетинга ти и вдига конверсията.</p></div></li>
-                <li class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div><div class="benefit-content"><h3>Модел за марж</h3><p>Как да вдигнеш маржа без да вдигаш цените.</p></div></li>
-                <li class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div><div class="benefit-content"><h3>Стратегия за 6–12 месеца</h3><p>Печалба, структура и решения за следващото ти ниво.</p></div></li>
-            </ul>
-            <div class="text-center" style="margin-top: 2.5rem;">
-                <a href="./survey.html" class="hero-cta">КАНДИДАТСТВАЙ ЗА МЯСТО →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- SPEAKERS -->
-    <section class="section speakers">
-        <div class="container">
-            <div class="text-center">
-                <span class="section-label">Лекторите</span>
-                <h2 class="section-title">На сцена: хора, които мислят в печалба</h2>
-                <p class="section-subtitle">Това не е шоу. Това е бизнес ден — модел, структура и решения.</p>
-            </div>
-            <div class="speakers-grid">
-                <div class="speaker-card">
-                    <div class="speaker-avatar"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></div>
-                    <h3 class="speaker-name">Теодора Русева</h3>
-                    <p class="speaker-title">Маркетинг, оферта и позициониране</p>
-                    <p class="speaker-bio">Подрежда маркетинг, оферта и идентичност в ясна система. Показва къде се губят пари и как се вдига маржът без хаос.</p>
-                </div>
-                <div class="speaker-card">
-                    <div class="speaker-avatar"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></div>
-                    <h3 class="speaker-name">Габриела Великова</h3>
-                    <p class="speaker-title">Комуникация, решения и вътрешни модели</p>
-                    <p class="speaker-bio">Работи с подсъзнателни модели, емоционални реакции и вътрешни конфликти, които влияят на решенията в бизнеса и финансовия успех. Помага на предприемачки и експертки да действат уверено, да взимат по-смели решения и да спрат да се ограничават сами.</p>
-                </div>
-                <div class="speaker-card">
-                    <div class="speaker-avatar"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></div>
-                    <h3 class="speaker-name">Симеон Димитров</h3>
-                    <p class="speaker-title">AI системи за бизнес (реални внедрявания)</p>
-                    <p class="speaker-bio">Изгражда реално работещи AI системи за бизнес (не демонстрации). Показва къде AI носи пари, време и мащаб — и къде е загуба на ресурс. Внедрява софтуери и автоматизации, които спестяват ръчен труд, ускоряват маркетинг и взимане на решения, без да обезценяват експертизата — а я умножават.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PROGRAM -->
-    <section class="section program">
-        <div class="container">
-            <div class="text-center">
-                <span class="section-label">Програмата</span>
-                <h2 class="section-title">Теми, които носят печалба</h2>
-                <p class="section-subtitle">Без общи приказки. Фокус: клиенти → марж → процеси → резултат.</p>
-            </div>
-            <div class="program-grid">
-                <div class="program-item"><span class="program-time">01</span><div class="program-content"><h3>Как да привличаш по-платежоспособни клиенти</h3><p>Защо сегашният ти маркетинг привлича „грешните“ хора и как се позиционираш така, че цената да не е проблем.</p></div></div>
-                <div class="program-item"><span class="program-time">02</span><div class="program-content"><h3>Защо бизнесът ти не расте въпреки усилията</h3><p>Как да развиваш бизнеса си без да си навсякъде и как растящите хора взимат различни решения.</p></div></div>
-                <div class="program-item"><span class="program-time">03</span><div class="program-content"><h3>AI модели, които реално увеличават приходите</h3><p>Кои процеси си струва да се автоматизират, къде AI носи пари и къде е загуба на време.</p></div></div>
-                <div class="program-item"><span class="program-time">04</span><div class="program-content"><h3>Как бизнесите скалират с AI за по-малко от 20 минути</h3><p>Практични модели и внедрявания: AI като инструмент за печалба — не като шум.</p></div></div>
-                <div class="program-item"><span class="program-time">05</span><div class="program-content"><h3>Следващото ти бизнес ниво: модел, структура и решения</h3><p>Какво да спреш, какво да актуализираш още по време на събитието и какъв е следващият ти ход.</p></div></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- APPLY / PROCESS -->
-    <section class="section pricing" id="apply">
-        <div class="container">
-            <div class="text-center">
-                <span class="section-label">Кандидатстване</span>
-                <h2 class="section-title">Кандидатствай за място</h2>
-                <p class="section-subtitle">
-                    Тъй като целта е филтрация, кандидатстването е чрез кратка анкета.
-                    След разговор с одобрените кандидатки, ще получиш линк към втора страница с пакети и плащане.
-                </p>
-            </div>
-
-            <div class="pricing-grid">
-                <div class="price-card featured" style="max-width: 800px; margin: 0 auto;">
-                    <div style="text-align:center;">
-                        <a href="./survey.html" class="hero-cta" style="border-radius:14px;">КАНДИДАТСТВАЙ ЗА МЯСТО →</a>
-                        <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem;">
-                            * Анкетата отнема ~2 минути.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOR WHO / FILTER -->
-    <section class="section problem">
-        <div class="container">
-            <div class="text-center">
-                <span class="section-label">Филтър</span>
-                <h2 class="section-title">За кого е / не е</h2>
-                <p class="section-subtitle">Това е събитие за резултат, не за впечатления.</p>
-            </div>
-            <div class="problem-grid">
-                <div class="problem-card">
-                    <div class="problem-card-icon"><svg viewBox="0 0 24 24"><path d="M20 6 9 17 4 12"></path></svg></div>
-                    <h3>Това е за теб, ако:</h3>
-                    <p>Имаш бизнес или експертиза и искаш реални резултати. Мислиш в печалби (не в лайкове), готова си да взимаш решения и да внедряваш. Искаш AI да ти носи повече приходи, по-висок марж и по-малко разходи — без да се разкъсваш и без да наемаш огромен екип.</p>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-card-icon"><svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"></path></svg></div>
-                    <h3>Не е за теб, ако:</h3>
-                    <p>Търсиш магия, бързи трикове или “тайна формула” без действие. Ако искаш само да слушаш, да събираш идеи и после да не промениш нищо — това няма да ти помогне. Не е и за хора, които използват AI само за забавление, без ясна стратегия за печалба и процеси.</p>
-                </div>
-
-            </div>
-            <div class="text-center" style="margin-top: 2.5rem;">
-                <a href="./survey.html" class="hero-cta">КАНДИДАТСТВАЙ ЗА МЯСТО →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- HOW IT WORKS / STEPS -->
-    <section class="section steps">
-        <div class="container">
-            <div class="text-center">
-                <span class="section-label">Как става</span>
-                <h2 class="section-title">Как протича кандидатстването</h2>
-                <p class="section-subtitle">Цел: правилните хора в залата. Без изгубено време.</p>
-            </div>
-            <div class="program-grid">
-                <div class="program-item">
-                    <span class="program-time">01</span>
-                    <div class="program-content">
-                        <h3>Попълваш анкетата (2 мин.)</h3>
-                        <p>Кратка квалификация — за да видим дали събитието е точно за теб и на кое ниво си.</p>
-                    </div>
-                </div>
-                <div class="program-item">
-                    <span class="program-time">02</span>
-                    <div class="program-content">
-                        <h3>Потвърждение и разговор (ако е нужно)</h3>
-                        <p>При одобрение получаваш потвърждение. При нужда — кратък разговор за целите ти.</p>
-                    </div>
-                </div>
-                <div class="program-item">
-                    <span class="program-time">03</span>
-                    <div class="program-content">
-                        <h3>Получаваш линк за пакети и плащане</h3>
-                        <p>Одобрените кандидатки получават достъп до страница с пакети/плащане и завършват резервацията.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center" style="margin-top: 2.5rem;">
-                <a href="./survey.html" class="hero-cta">КАНДИДАТСТВАЙ ЗА МЯСТО →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- BONUSES -->
-    <section class="section bonuses">
-        <div class="container">
-            <div class="text-center">
-                <span class="section-label">Бонуси</span>
-                <h2 class="section-title">С какво си тръгваш (освен яснота)</h2>
-                <p class="section-subtitle">Искаме да си тръгнеш с готови решения, не само идеи.</p>
-            </div>
-            <ul class="benefit-list">
-                <li class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div><div class="benefit-content"><h3>AI чеклист за печалба</h3><p>Кои процеси да пипнеш първо, за да има ефект в приходи/разходи.</p></div></li>
-                <li class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div><div class="benefit-content"><h3>Шаблон: оферта + позициониране</h3><p>Структура, която сваля ценовите възражения и вдига маржа.</p></div></li>
-                <li class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div><div class="benefit-content"><h3>Приоритети за 6–12 месеца</h3><p>Ясни следващи стъпки: какво да спреш, какво да автоматизираш, какво да скалираш.</p></div></li>
-                <li class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div><div class="benefit-content"><h3>Личен план за внедряване</h3><p>Как да превърнеш наученото в реални процеси в бизнеса си (без хаос).</p></div></li>
-            </ul>
-            <div class="text-center" style="margin-top: 2.5rem;">
-                <a href="./survey.html" class="hero-cta">КАНДИДАТСТВАЙ ЗА МЯСТО →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- LOCATION / LOGISTICS -->
-    <section class="section location">
-        <div class="container">
-            <div class="text-center">
-                <span class="section-label">Локация</span>
-                <h2 class="section-title">Къде и как</h2>
-                <p class="section-subtitle">Ще получиш точните детайли след одобрение, но ето базовата логистика.</p>
-            </div>
-
-            <div class="location-grid">
-                <div class="location-card">
-                    <h3>София • Хотел Маринела</h3>
-                    <p>Целодневно събитие на живо. Зала, която позволява фокус и нетуъркинг без шум.</p>
-                    <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Hotel+Marinela+Sofia" target="_blank" rel="noopener">Отвори в Google Maps →</a>
-                </div>
-                <div class="location-card">
-                    <div class="location-meta">
-                        <div class="meta-row"><b>Дата</b><span>16 Май 2026</span></div>
-                        <div class="meta-row"><b>Град</b><span>София</span></div>
-                        <div class="meta-row"><b>Места</b><span>220 (лимит)</span></div>
-                        <div class="meta-row"><b>Фокус</b><span>Приходи • Марж • Процеси • Решения</span></div>
-                    </div>
-                    <p style="margin-top: 1.25rem; color: var(--text-muted); font-size: 0.9rem;">* Точен час и детайли за достъп/паркинг ще получиш по имейл след одобрение.</p>
-                </div>
-            </div>
-
-            <div class="text-center" style="margin-top: 2.5rem;">
-                <a href="./survey.html" class="hero-cta">КАНДИДАТСТВАЙ ЗА МЯСТО →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section contact">
-        <div class="container">
-            <div class="text-center">
-                <span class="section-label">Контакт</span>
-                <h2 class="section-title">Имаш въпрос преди да кандидатстваш?</h2>
-                <p class="section-subtitle">Пиши ни и ще ти кажем директно дали това е твоето място.</p>
-            </div>
-
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <h3>Анкета за кандидатстване</h3>
-                    <p>Започни от тук: <a href="./survey.html">survey.html</a></p>
-                </div>
-                <div class="contact-card">
-                    <h3>Имейл</h3>
-                    <p><a href="mailto:info@businesslady.com">info@businesslady.com</a> (ако още не е активен, кажи ми и ще го сменя)</p>
-                </div>
-                <div class="contact-card">
-                    <h3>Важно</h3>
-                    <p>Местата са лимитирани. Ако кандидатстваш късно, може да няма наличност, дори да си подходящ.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="section faq">
-        <div class="container">
-            <div class="text-center">
-                <span class="section-label">FAQ</span>
-                <h2 class="section-title">Често задавани въпроси</h2>
-                <p class="section-subtitle">Обезвреждаме възраженията предварително — за да вземеш спокойно решение.</p>
-            </div>
-            <div class="faq-list">
-                <div class="faq-item">
-                    <button class="faq-question">Прекалено техническо ли ще е?</button>
-                    <div class="faq-answer"><p>Не. Фокусът е бизнес логиката и печалбата. AI е инструмент — показваме кога носи пари и кога е загуба на време.</p></div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">Подходящо ли е, ако вече използвам AI?</button>
-                    <div class="faq-answer"><p>Да. Ще разбереш дали го използваш правилно и печелившо, и кои процеси да автоматизираш първи за реален ефект.</p></div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">Ще имам ли резултат от участието?</button>
-                    <div class="faq-answer"><p>Това е стратегически бизнес ден — теория и практика в едно. Целта е да си тръгнеш с модел, приоритети и следващи стъпки.</p></div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">Подходящо ли е за начинаещи?</button>
-                    <div class="faq-answer"><p>Да — както за начинаещи, така и за напреднали. Структурата е ясна, а примерите са приложими към различни нива и индустрии.</p></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- RISK REVERSAL + FINAL CTA -->
-    <section class="cta-section">
-        <div class="container">
-            <h2 class="section-title">Това не е импулсна покупка. Това е бизнес решение.</h2>
-            <p>Ако търсиш шум — това не е за теб. Ако търсиш печалба — мястото ти е тук.</p>
-            <a href="./survey.html" class="hero-cta">Кандидатствай за място →</a>
-            <p style="margin-top: 1.25rem; color: var(--text-secondary); font-weight: 600;">220 места. Само за хора, които мислят в пари.</p>
-            <p style="margin-top: 0.85rem; color: var(--text-muted); font-size: 0.95rem; max-width: 760px; margin-left:auto; margin-right:auto;">
-                Най-големият риск днес не е да използваш AI. Най-големият риск е да го използваш без стратегия за печалба.
-            </p>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">София Маркетинг Форум</div>
-                <div class="footer-links">
-                    <a href="#">За нас</a>
-                    <a href="#">Контакти</a>
-                    <a href="#">Политика</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // FAQ Toggle
-        document.querySelectorAll('.faq-question').forEach(btn => {
-            btn.addEventListener('click', () => {
-                btn.parentElement.classList.toggle('active');
-            });
-        });
-
-        // Admin-only uploader (client-side gated)
-        // Toggle: Ctrl+Shift+A → prompt for passcode, stored in localStorage.
-        // Note: this is UX gating (not strong security). Real protection requires server-side auth.
-        (function(){
-            const adminKey = 'blc_admin_enabled';
-            const passcode = 'blc2026';
-            const wrap = document.getElementById('adminUpload');
-            const input = document.getElementById('adminClip');
-            const meta = document.getElementById('adminMeta');
-            const preview = document.getElementById('adminPreview');
-            const logout = document.getElementById('adminLogout');
-
-            function setEnabled(on){
-                if (!wrap) return;
-                if (on) wrap.classList.add('active'); else wrap.classList.remove('active');
-            }
-
-            setEnabled(localStorage.getItem(adminKey) === '1');
-
-            function requestEnable(triggerLabel){
-                const code = prompt('Admin passcode');
-                if (code === passcode) {
-                    localStorage.setItem(adminKey, '1');
-                    setEnabled(true);
-                    alert('Admin upload enabled');
-                } else if (code !== null) {
-                    alert('Wrong passcode');
-                }
-            }
-
-            // Desktop shortcut
-            window.addEventListener('keydown', (e) => {
-                if (e.ctrlKey && e.shiftKey && (e.key === 'A' || e.key === 'a')) {
-                    requestEnable('shortcut');
-                }
-            });
-
-            // Mobile-friendly: tap the logo 7 times
-            const logo = document.querySelector('.logo');
-            let taps = 0;
-            let tapTimer = null;
-            if (logo) {
-                logo.addEventListener('click', (e) => {
-                    taps++;
-                    clearTimeout(tapTimer);
-                    tapTimer = setTimeout(() => taps = 0, 1200);
-                    if (taps >= 7) {
-                        taps = 0;
-                        requestEnable('logo-tap');
-                    }
-                });
-            }
-
-            // URL trigger: ?admin=1 or #admin
-            try {
-                const params = new URLSearchParams(window.location.search);
-                // URL enable for cases where prompts are blocked:
-                // ?admin=1&code=blc2026
-                if (params.get('admin') === '1' && params.get('code') === passcode) {
-                    localStorage.setItem(adminKey, '1');
-                    setEnabled(true);
-                } else if (params.get('admin') === '1' || window.location.hash === '#admin') {
-                    requestEnable('url');
-                }
-            } catch {}
-
-            if (logout) logout.addEventListener('click', () => {
-                localStorage.removeItem(adminKey);
-                setEnabled(false);
-            });
-
-            if (input) input.addEventListener('change', () => {
-                const file = input.files && input.files[0];
-                if (!file) return;
-                const max = 100 * 1024 * 1024;
-                if (file.size > max) {
-                    meta.textContent = 'Файлът е над 100MB. Компресирай/изрежи и пробвай пак.';
-                    input.value = '';
-                    preview.style.display = 'none';
-                    return;
-                }
-                meta.textContent = `Избран файл: ${file.name} (${Math.round(file.size/1024/1024)}MB)`;
-                const url = URL.createObjectURL(file);
-                preview.src = url;
-                preview.style.display = 'block';
-            });
-        })();
-    </script>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
