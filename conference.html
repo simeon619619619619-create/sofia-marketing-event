@@ -36,9 +36,14 @@
         .topbar { position: fixed; top: 0; left: 0; right: 0; z-index: 50; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background: rgba(10, 10, 10, 0.55); border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
         .topbar-inner { max-width: 1100px; margin: 0 auto; padding: 1.1rem 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
         .logo { display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none; }
-        .logo-mark { width: 28px; height: 28px; border-radius: 10px; background: linear-gradient(135deg, rgba(212, 175, 55, 0.9), rgba(255, 107, 53, 0.7)); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.18); }
+        .logo-mark { width: 28px; height: 28px; border-radius: 10px; background: linear-gradient(135deg, rgba(233,30,140,0.9), rgba(255, 107, 53, 0.7)); box-shadow: 0 10px 30px rgba(233,30,140,0.22); }
         .logo-text { font-family: var(--font-display); font-weight: 800; letter-spacing: 0.02em; color: var(--text-primary); font-size: 1.05rem; }
-        .topbar-cta { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.75rem 1.2rem; border-radius: 999px; text-decoration: none; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--bg-primary); background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.18); }
+
+        .nav { display: flex; gap: 1rem; align-items: center; justify-content: center; flex: 1; }
+        .nav a { color: var(--text-secondary); text-decoration: none; font-weight: 800; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; }
+        .nav a:hover { color: var(--text-primary); }
+
+        .topbar-cta { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.75rem 1.2rem; border-radius: 999px; text-decoration: none; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--bg-primary); background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%); box-shadow: 0 10px 30px rgba(233,30,140,0.22); }
         .topbar-cta:hover { transform: translateY(-1px); }
 
         /* Hero */
@@ -193,6 +198,7 @@
             .meta-row { grid-template-columns: 1fr; }
             .footer-content { flex-direction: column; text-align: center; }
             .footer-links { flex-wrap: wrap; justify-content: center; gap: 1rem 2rem; }
+            .nav { display: none; }
         }
     </style>
 </head>
@@ -205,6 +211,14 @@
                 <span class="logo-mark" aria-hidden="true"></span>
                 <span class="logo-text">Business Lady Conference</span>
             </a>
+
+            <nav class="nav" aria-label="Primary">
+                <a href="./academy.html">Academy</a>
+                <a href="./community.html">Общност</a>
+                <a href="./conference.html">Conference</a>
+                <a href="./awards.html">Awards</a>
+            </nav>
+
             <a class="topbar-cta" href="./survey.html">Кандидатствай</a>
         </div>
     </header>
