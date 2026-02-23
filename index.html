@@ -573,18 +573,47 @@
 
             setEnabled(localStorage.getItem(adminKey) === '1');
 
+            function requestEnable(triggerLabel){
+                const code = prompt('Admin passcode');
+                if (code === passcode) {
+                    localStorage.setItem(adminKey, '1');
+                    setEnabled(true);
+                    alert('Admin upload enabled');
+                } else if (code !== null) {
+                    alert('Wrong passcode');
+                }
+            }
+
+            // Desktop shortcut
             window.addEventListener('keydown', (e) => {
                 if (e.ctrlKey && e.shiftKey && (e.key === 'A' || e.key === 'a')) {
-                    const code = prompt('Admin passcode');
-                    if (code === passcode) {
-                        localStorage.setItem(adminKey, '1');
-                        setEnabled(true);
-                        alert('Admin upload enabled');
-                    } else {
-                        alert('Wrong passcode');
-                    }
+                    requestEnable('shortcut');
                 }
             });
+
+            // Mobile-friendly: tap the logo 7 times
+            const logo = document.querySelector('.logo');
+            let taps = 0;
+            let tapTimer = null;
+            if (logo) {
+                logo.addEventListener('click', (e) => {
+                    taps++;
+                    clearTimeout(tapTimer);
+                    tapTimer = setTimeout(() => taps = 0, 1200);
+                    if (taps >= 7) {
+                        taps = 0;
+                        requestEnable('logo-tap');
+                    }
+                });
+            }
+
+            // URL trigger: ?admin=1 or #admin
+            try {
+                const params = new URLSearchParams(window.location.search);
+                if (params.get('admin') === '1' || window.location.hash === '#admin') {
+                    requestEnable('url');
+                }
+            } catch {}
 
             if (logout) logout.addEventListener('click', () => {
                 localStorage.removeItem(adminKey);
