@@ -132,6 +132,34 @@
         .price-cta:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
         .price-card.featured .price-cta { background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light)); border: none; color: var(--bg-primary); }
         
+        /* Steps / Process */
+        .steps { background: var(--bg-secondary); }
+        .steps .program-item { align-items: flex-start; }
+
+        /* Bonuses */
+        .bonuses { background: var(--bg-primary); }
+
+        /* Location */
+        .location { background: var(--bg-secondary); }
+        .location-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 2rem; align-items: stretch; }
+        .location-card { background: var(--bg-card); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 18px; padding: 2rem; }
+        .location-card h3 { font-size: 1.15rem; margin-bottom: 0.8rem; }
+        .location-card p { color: var(--text-secondary); font-size: 0.95rem; }
+        .location-meta { display: grid; gap: 0.9rem; }
+        .meta-row { display: grid; grid-template-columns: 90px 1fr; gap: 0.9rem; color: var(--text-secondary); font-size: 0.95rem; }
+        .meta-row b { color: var(--text-primary); font-weight: 700; }
+        .map-link { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.9rem 1.2rem; border-radius: 14px; border: 1px solid rgba(212, 175, 55, 0.35); color: var(--accent-gold); text-decoration: none; font-weight: 700; margin-top: 1.25rem; }
+        .map-link:hover { border-color: rgba(212, 175, 55, 0.6); }
+
+        /* Contact */
+        .contact { background: var(--bg-primary); }
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 0 auto; }
+        .contact-card { background: var(--bg-card); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 1.75rem; }
+        .contact-card h3 { font-size: 1.05rem; margin-bottom: 0.5rem; }
+        .contact-card p { color: var(--text-secondary); font-size: 0.95rem; }
+        .contact-card a { color: var(--accent-gold); text-decoration: none; font-weight: 700; }
+        .contact-card a:hover { text-decoration: underline; }
+
         /* FAQ */
         .faq { background: var(--bg-primary); }
         .faq-list { max-width: 700px; margin: 0 auto; }
@@ -161,6 +189,8 @@
             .problem-grid, .speakers-grid, .pricing-grid { grid-template-columns: 1fr; }
             .program-item { flex-direction: column; text-align: center; gap: 0.75rem; }
             .benefit-item { flex-direction: column; text-align: center; gap: 1rem; }
+            .location-grid { grid-template-columns: 1fr; }
+            .meta-row { grid-template-columns: 1fr; }
             .footer-content { flex-direction: column; text-align: center; }
             .footer-links { flex-wrap: wrap; justify-content: center; gap: 1rem 2rem; }
         }
@@ -418,14 +448,125 @@
                     <h3>Не е за теб, ако:</h3>
                     <p>Търсиш магия, бързи трикове или си пасивен наблюдател без желание да внедряваш и действаш.</p>
                 </div>
-                <div class="problem-card">
-                    <div class="problem-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"></path></svg></div>
-                    <h3>Заедно:</h3>
-                    <p><span class="text-gold" style="font-weight:700;">повече приходи</span> + <span class="text-gold" style="font-weight:700;">по-ниски разходи</span> = <span class="text-gold" style="font-weight:700;">повече печалба</span></p>
+
+            </div>
+            <div class="text-center" style="margin-top: 2.5rem;">
+                <a href="./survey.html" class="hero-cta">КАНДИДАТСТВАЙ ЗА МЯСТО →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS / STEPS -->
+    <section class="section steps">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-label">Как става</span>
+                <h2 class="section-title">Как протича кандидатстването</h2>
+                <p class="section-subtitle">Цел: правилните хора в залата. Без изгубено време.</p>
+            </div>
+            <div class="program-grid">
+                <div class="program-item">
+                    <span class="program-time">01</span>
+                    <div class="program-content">
+                        <h3>Попълваш анкетата (2 мин.)</h3>
+                        <p>Кратка квалификация — за да видим дали събитието е точно за теб и на кое ниво си.</p>
+                    </div>
+                </div>
+                <div class="program-item">
+                    <span class="program-time">02</span>
+                    <div class="program-content">
+                        <h3>Потвърждение и разговор (ако е нужно)</h3>
+                        <p>При одобрение получаваш потвърждение. При нужда — кратък разговор за целите ти.</p>
+                    </div>
+                </div>
+                <div class="program-item">
+                    <span class="program-time">03</span>
+                    <div class="program-content">
+                        <h3>Получаваш линк за пакети и плащане</h3>
+                        <p>Одобрените кандидати получават достъп до страница с пакети/плащане и завършват резервацията.</p>
+                    </div>
                 </div>
             </div>
             <div class="text-center" style="margin-top: 2.5rem;">
                 <a href="./survey.html" class="hero-cta">КАНДИДАТСТВАЙ ЗА МЯСТО →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BONUSES -->
+    <section class="section bonuses">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-label">Бонуси</span>
+                <h2 class="section-title">С какво си тръгваш (освен яснота)</h2>
+                <p class="section-subtitle">Искаме да си тръгнеш с готови решения, не само идеи.</p>
+            </div>
+            <ul class="benefit-list">
+                <li class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div><div class="benefit-content"><h3>AI чеклист за печалба</h3><p>Кои процеси да пипнеш първо, за да има ефект в приходи/разходи.</p></div></li>
+                <li class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div><div class="benefit-content"><h3>Шаблон: оферта + позициониране</h3><p>Структура, която сваля ценовите възражения и вдига маржа.</p></div></li>
+                <li class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div><div class="benefit-content"><h3>Приоритети за 6–12 месеца</h3><p>Ясни следващи стъпки: какво да спреш, какво да автоматизираш, какво да скалираш.</p></div></li>
+                <li class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div><div class="benefit-content"><h3>Личен план за внедряване</h3><p>Как да превърнеш наученото в реални процеси в бизнеса си (без хаос).</p></div></li>
+            </ul>
+            <div class="text-center" style="margin-top: 2.5rem;">
+                <a href="./survey.html" class="hero-cta">КАНДИДАТСТВАЙ ЗА МЯСТО →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION / LOGISTICS -->
+    <section class="section location">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-label">Локация</span>
+                <h2 class="section-title">Къде и как</h2>
+                <p class="section-subtitle">Ще получиш точните детайли след одобрение, но ето базовата логистика.</p>
+            </div>
+
+            <div class="location-grid">
+                <div class="location-card">
+                    <h3>София • Хотел Маринела</h3>
+                    <p>Целодневно събитие на живо. Зала, която позволява фокус и нетуъркинг без шум.</p>
+                    <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Hotel+Marinela+Sofia" target="_blank" rel="noopener">Отвори в Google Maps →</a>
+                </div>
+                <div class="location-card">
+                    <div class="location-meta">
+                        <div class="meta-row"><b>Дата</b><span>16 Май 2026</span></div>
+                        <div class="meta-row"><b>Град</b><span>София</span></div>
+                        <div class="meta-row"><b>Места</b><span>220 (лимит)</span></div>
+                        <div class="meta-row"><b>Фокус</b><span>Приходи • Марж • Процеси • Решения</span></div>
+                    </div>
+                    <p style="margin-top: 1.25rem; color: var(--text-muted); font-size: 0.9rem;">* Точен час и детайли за достъп/паркинг ще получиш по имейл след одобрение.</p>
+                </div>
+            </div>
+
+            <div class="text-center" style="margin-top: 2.5rem;">
+                <a href="./survey.html" class="hero-cta">КАНДИДАТСТВАЙ ЗА МЯСТО →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-label">Контакт</span>
+                <h2 class="section-title">Имаш въпрос преди да кандидатстваш?</h2>
+                <p class="section-subtitle">Пиши ни и ще ти кажем директно дали това е твоето място.</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>Анкета за кандидатстване</h3>
+                    <p>Започни от тук: <a href="./survey.html">survey.html</a></p>
+                </div>
+                <div class="contact-card">
+                    <h3>Имейл</h3>
+                    <p><a href="mailto:info@businesslady.com">info@businesslady.com</a> (ако още не е активен, кажи ми и ще го сменя)</p>
+                </div>
+                <div class="contact-card">
+                    <h3>Важно</h3>
+                    <p>Местата са лимитирани. Ако кандидатстваш късно, може да няма наличност, дори да си подходящ.</p>
+                </div>
             </div>
         </div>
     </section>
