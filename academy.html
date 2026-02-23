@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Business Lady Bulgaria Academy | Кандидатстване</title>
+  <meta name="description" content="Business Lady Bulgaria Academy — структурирана програма за жени, които искат позиция, доход и влияние. Кандидатствай за участие." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg-primary: #0a0a0a;
+      --bg-secondary: #141414;
+      --bg-card: #1a1a1a;
+      --accent-gold: #D4AF37;
+      --accent-gold-light: #F4C430;
+      --accent-orange: #FF6B35;
+      --text-primary: #ffffff;
+      --text-secondary: #a0a0a0;
+      --text-muted: #666666;
+      --font-main: 'Inter', -apple-system, sans-serif;
+      --font-display: 'Playfair Display', Georgia, serif;
+    }
+
+    body { font-family: var(--font-main); background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; }
+    .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
+
+    .top { padding: 1.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); background: rgba(10,10,10,0.6); position: sticky; top:0; backdrop-filter: blur(12px); }
+    .logo { font-family: var(--font-display); font-weight: 800; letter-spacing: 0.02em; }
+    .card { margin: 2.2rem auto; background: var(--bg-card); border: 1px solid rgba(255,255,255,0.06); border-radius: 20px; padding: 2rem; }
+
+    h1 { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.7rem, 3vw, 2.2rem); margin-bottom: 0.5rem; }
+    .sub { color: var(--text-secondary); margin-bottom: 1.25rem; }
+
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    label { display:block; font-size:0.9rem; color: var(--text-secondary); margin-bottom:0.4rem; }
+    input, textarea { width:100%; padding:0.9rem 1rem; border-radius:12px; border:1px solid rgba(255,255,255,0.12); background:rgba(255,255,255,0.03); color:var(--text-primary); outline: none; }
+    textarea { resize: vertical; }
+
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:0.6rem; padding: 1rem 1.4rem; border-radius: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; border: none; cursor: pointer; color: var(--bg-primary);
+      background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
+      box-shadow: 0 10px 30px rgba(212,175,55,0.18);
+    }
+
+    .muted { margin-top: 0.85rem; font-size: 0.8rem; color: var(--text-muted); }
+    .status { margin-left: 0.75rem; color: var(--text-secondary); font-size: 0.95rem; }
+    .honeypot { display:none !important; }
+
+    @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } .card{padding:1.4rem;} }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; gap:1rem;">
+      <div class="logo">Business Lady Bulgaria</div>
+      <a href="./index.html" style="color: var(--text-secondary); text-decoration:none; font-weight:600;">← Начало</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <h1>Кандидатствай за участие в Academy</h1>
+      <p class="sub">Структурирана програма за жени, които искат позиция, доход и влияние.</p>
+
+      <form id="academyForm">
+        <input class="honeypot" name="website" tabindex="-1" autocomplete="off" />
+
+        <div class="grid">
+          <div>
+            <label>Име*</label>
+            <input name="name" required placeholder="Име и фамилия" />
+          </div>
+          <div>
+            <label>Имейл*</label>
+            <input name="email" type="email" required placeholder="name@company.com" />
+          </div>
+          <div>
+            <label>Телефон*</label>
+            <input name="phone" required placeholder="+359…" />
+          </div>
+          <div>
+            <label>Бизнес / фирма*</label>
+            <input name="company" required placeholder="Име на фирма / дейност" />
+          </div>
+        </div>
+
+        <div style="margin-top:1rem;">
+          <label>Какво искаш да постигнеш в следващите 6–12 месеца?*</label>
+          <textarea name="why" required rows="6" placeholder="Опиши целите си с 2–5 изречения…"></textarea>
+        </div>
+
+        <div style="margin-top:1.25rem; display:flex; flex-wrap:wrap; align-items:center; gap:0.75rem;">
+          <button class="btn" type="submit">Изпрати кандидатура →</button>
+          <span id="status" class="status"></span>
+        </div>
+
+        <p class="muted">* Тази форма е MVP. Следващ етап: автоматично записване в CRM и обратна връзка по имейл.</p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('academyForm');
+    const statusEl = document.getElementById('status');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries());
+      if (data.website) return; // honeypot
+      try {
+        const key = 'blb_academy_applications';
+        const existing = JSON.parse(localStorage.getItem(key) || '[]');
+        existing.push({ ...data, submittedAt: new Date().toISOString() });
+        localStorage.setItem(key, JSON.stringify(existing));
+      } catch {}
+
+      statusEl.textContent = 'Готово! Кандидатурата е изпратена.';
+      form.reset();
+      setTimeout(() => statusEl.textContent = '', 6000);
+    });
+  </script>
+</body>
+</html>
