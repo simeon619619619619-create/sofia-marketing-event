@@ -51,9 +51,9 @@
     }
 
     .hero { min-height: 92vh; display:flex; align-items:center; justify-content:flex-start; padding-top: 86px;
-      background:
-        linear-gradient(90deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.35) 55%, rgba(0,0,0,0.10) 100%),
-        url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=2200&q=70') center/cover no-repeat;
+      background: radial-gradient(ellipse at 30% 20%, rgba(233,30,140,0.10) 0%, transparent 50%),
+                  radial-gradient(ellipse at 70% 80%, rgba(255,107,53,0.05) 0%, transparent 40%),
+                  var(--bg-primary);
     }
     .hero-content { text-align:left; padding: 2rem 0; max-width: 820px; }
 
@@ -65,12 +65,7 @@
       background: rgba(0,0,0,0.35); color: rgba(255,255,255,0.92); font-weight: 800; letter-spacing:0.08em; text-transform: uppercase; font-size: 0.75rem;
     }
 
-    .hero-bar { margin-top: 1.35rem; display:flex; gap:0; width: min(640px, 100%); border-radius: 14px; overflow:hidden; border:1px solid rgba(255,255,255,0.18); background: rgba(0,0,0,0.35); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
-    .hero-bar input { flex:1; padding: 0.95rem 1rem; border:0; outline:none; background: transparent; color: rgba(255,255,255,0.92); font-weight: 600; }
-    .hero-bar input::placeholder { color: rgba(255,255,255,0.55); }
-    .hero-bar button { border:0; cursor:pointer; padding: 0.95rem 1.1rem; font-weight: 900; letter-spacing:0.06em; text-transform: uppercase; color: #0a0a0a;
-      background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
-    }
+    /* hero search bar removed */
 
     .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-top: 2.2rem; }
     .card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 18px; padding: 1.6rem; text-align:left; }
@@ -136,11 +131,6 @@
           В 21 век жените продължават да плащат за признание, за награди и за достъп до възможности.
           Ние създаваме система, в която развитието идва от работа, стойност и реални резултати — не от такси за участие.
         </p>
-
-        <form class="hero-bar" action="./academy.html" method="get">
-          <input name="q" placeholder="Кандидатствай за Academy / Conference / Awards…" aria-label="Бърз достъп" />
-          <button type="submit">Кандидатствай</button>
-        </form>
 
         <div class="pill">Среда за резултати</div>
       </div>
