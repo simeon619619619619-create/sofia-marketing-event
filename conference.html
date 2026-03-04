@@ -164,8 +164,8 @@
     position: relative;
     padding-top: 92px;
     overflow: hidden;
-    /* No photo/video background — just clean premium dark */
-    background: #070a12;
+    /* No photo/video background — match the rest of the white pages */
+    background: var(--bg);
   }
 
   .hero-video {
@@ -186,10 +186,10 @@
     position: absolute;
     inset: 0;
     z-index: 1;
-    /* Soft gradients only (no image) */
+    /* Soft light gradients only (no image) */
     background:
-      radial-gradient(circle at 50% 18%, rgba(255, 92, 178, 0.18), transparent 55%),
-      linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.78) 70%, rgba(0,0,0,0.92) 100%);
+      radial-gradient(circle at 50% 10%, rgba(255, 92, 178, 0.14), transparent 55%),
+      linear-gradient(180deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.95) 70%, rgba(255,255,255,1) 100%);
   }
 
   .hero-content { position: relative; z-index: 2; text-align: center; padding: 2rem; }
@@ -215,7 +215,7 @@
     line-height: 1.08;
     margin-bottom: 1.25rem;
     letter-spacing: -0.01em;
-    color: #fff;
+    color: var(--ink);
   }
   .hero-title .highlight {
     color: #ff5cb2;
@@ -223,7 +223,7 @@
   }
   .hero-subtitle {
     font-size: clamp(1.06rem, 2vw, 1.25rem);
-    color: rgba(255,255,255,0.72);
+    color: var(--muted);
     max-width: 720px;
     margin: 0 auto 2.2rem;
   }
