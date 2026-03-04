@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Business Lady Bulgaria Academy | Кандидатстване</title>
-  <meta name="description" content="Business Lady Bulgaria Academy — програма (с кандидатстване) за жени, които искат позиция, доход и влияние." />
+  <title>Business Lady Club | Кандидатствай за членство</title>
+  <meta name="description" content="Business Lady Club — елитен клуб за жени в бизнес. Прием след кандидатстване и проверка по критерии." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -115,11 +115,11 @@
       </a>
       <nav class="nav" aria-label="Primary">
         <a href="./index.html">Начало</a>
-        <a href="./academy.html">Академия</a>
+        <a href="./academy.html">Клуб</a>
         <a href="./conference.html">Конференция</a>
         <a href="./awards.html">Награди</a>
       </nav>
-      <a class="cta" href="#apply">Кандидатствай</a>
+      <a class="cta" href="#apply">Кандидатствай за членство</a>
     </div>
   </header>
 
@@ -127,11 +127,11 @@
   <main class="hero">
     <div class="container">
       <div class="hero-content">
-        <div class="pill">Академия</div>
-        <h1>Business Lady Bulgaria Academy</h1>
-        <p class="sub">Програма (с кандидатстване) за жени, които искат позиция, доход и влияние.</p>
+        <div class="pill">Клуб</div>
+        <h1>Business Lady Club</h1>
+        <p class="sub">Елитен клуб за жени в бизнес — прием след кандидатстване и ясни критерии.</p>
         <div style="margin-top: 1.75rem; display:flex; gap: 1rem; justify-content:center; flex-wrap:wrap;">
-          <a class="cta" href="#apply">Кандидатствай за участие →</a>
+          <a class="cta" href="#apply">Кандидатствай за членство →</a>
         </div>
       </div>
     </div>
@@ -140,7 +140,7 @@
   <!-- PROBLEM -->
   <section class="section" style="background: var(--bg-2);">
     <div class="container">
-      <h2 class="section-title">Какво решава Academy</h2>
+      <h2 class="section-title">Какво решава клубът</h2>
       <p class="section-sub">Не търсиш мотивация. Търсиш структура, позиция и среда за резултати.</p>
       <div class="list">
         <div class="list-item">– липса на ясно <strong>позициониране</strong> и оферта, която продава</div>
@@ -190,11 +190,11 @@
   <section class="section" id="apply" style="background: var(--bg-2);">
     <div class="container">
       <div class="form-wrap">
-        <h2 class="section-title" style="text-align:center;">Кандидатствай за участие</h2>
+        <h2 class="section-title" style="text-align:center;">Кандидатствай за членство</h2>
         <p class="section-sub" style="text-align:center; margin: 0 auto;">Попълни формата. Ще получиш потвърждение и следващи стъпки.</p>
 
         <div class="form-card">
-          <form id="academyForm">
+          <form id="clubForm">
             <input class="honeypot" name="website" tabindex="-1" autocomplete="off" />
 
             <div class="form-grid">
@@ -240,7 +240,7 @@
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    const form = document.getElementById('academyForm');
+    const form = document.getElementById('clubForm');
     const statusEl = document.getElementById('status');
 
     form.addEventListener('submit', (e) => {
@@ -248,7 +248,7 @@
       const data = Object.fromEntries(new FormData(form).entries());
       if (data.website) return; // honeypot
       try {
-        const key = 'blb_academy_applications';
+        const key = 'blb_club_applications';
         const existing = JSON.parse(localStorage.getItem(key) || '[]');
         existing.push({ ...data, submittedAt: new Date().toISOString() });
         localStorage.setItem(key, JSON.stringify(existing));
