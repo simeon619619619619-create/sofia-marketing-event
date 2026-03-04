@@ -49,63 +49,30 @@
             min-height: 100vh;
         }
 
-        /* Topbar */
-        .topbar {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            background: rgba(26,10,15,0.75);
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-        .topbar-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1.1rem 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-        }
-        .logo {
-            font-family: var(--font-display);
-            font-weight: 900;
-            letter-spacing: 0.02em;
-            color: var(--text-primary);
-            text-decoration: none;
-        }
-        .nav {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-            justify-content: center;
-            flex: 1;
-        }
-        .nav a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 0.82rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-        .nav a:hover,
-        .nav a.active { color: var(--accent-gold-bright); }
-        .topbar-cta {
+        /* Back Link */
+        .back-link {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            padding: 0.85rem 1.2rem;
-            border-radius: 50px;
+            gap: 0.5rem;
+            color: var(--text-muted);
             text-decoration: none;
-            font-size: 0.82rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--bg-primary);
-            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-bright) 55%, var(--accent-orange) 100%);
-            box-shadow: 0 10px 30px rgba(233,30,140,0.22);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            z-index: 100;
+        }
+
+        .back-link:hover {
+            color: var(--accent-gold-bright);
+        }
+
+        .back-link svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
         }
 
         /* Hero Header */
@@ -612,8 +579,10 @@
         }
 
         @media (max-width: 768px) {
-            .topbar-inner { padding: 1rem 1.25rem; }
-            .nav { display: none; }
+            .back-link {
+                top: 1rem;
+                left: 1rem;
+            }
 
             .tickets-hero {
                 padding: 5rem 1.5rem 3rem;
@@ -673,18 +642,11 @@
     </style>
 </head>
 <body>
-    <!-- Topbar -->
-    <header class="topbar">
-        <div class="topbar-inner">
-            <a class="logo" href="./conference.html">Business Lady Conference</a>
-            <nav class="nav" aria-label="Primary">
-                <a href="./conference.html">Начало</a>
-                <a class="active" href="./tickets.html">Билети</a>
-                <a href="./survey.html">Кандидатствай</a>
-            </nav>
-            <a class="topbar-cta" href="./survey.html">Кандидатствай за място</a>
-        </div>
-    </header>
+    <!-- Back Link -->
+    <a href="index.html" class="back-link">
+        <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+        Обратно
+    </a>
 
     <!-- Hero Header -->
     <section class="tickets-hero">
