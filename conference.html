@@ -22,8 +22,8 @@
   html { scroll-behavior: smooth; }
 
   :root {
-    --bg: #fbfaf7;
-    --bg-2: #f4f2ee;
+    --bg: #ffffff;
+    --bg-2: #f6f6f8;
     --card: rgba(255,255,255,0.86);
     --card-solid: #ffffff;
     --ink: #0b1220;
@@ -49,9 +49,7 @@
   body {
     margin: 0;
     font-family: var(--font-main);
-    background: radial-gradient(1100px 520px at 70% -10%, rgba(176,141,87,0.18), transparent 60%),
-                radial-gradient(900px 520px at 10% 10%, rgba(31,42,68,0.10), transparent 62%),
-                var(--bg);
+    background: var(--bg);
     color: var(--ink);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
@@ -187,9 +185,7 @@
     position: absolute;
     inset: 0;
     z-index: 1;
-    background:
-      radial-gradient(900px 480px at 50% 20%, rgba(251,250,247,0.08), rgba(251,250,247,0.70) 55%, rgba(251,250,247,0.94) 100%),
-      linear-gradient(180deg, rgba(251,250,247,0.30) 0%, rgba(251,250,247,0.95) 100%);
+    background: linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.90) 65%, rgba(255,255,255,1) 100%);
   }
 
   .hero-content { position: relative; z-index: 2; text-align: center; padding: 2rem; }
