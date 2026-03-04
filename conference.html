@@ -177,8 +177,10 @@
     object-fit: cover;
     z-index: 0;
     filter: grayscale(0.15) saturate(0.92) contrast(1.02);
-    opacity: 0.20;
+    opacity: 0;
   }
+  .hero-video{display:none;}
+
 
   .hero::after {
     content: "";
@@ -268,55 +270,7 @@
     color: var(--muted);
     max-width: 720px;
     margin: 0 auto 3rem;
-  }
-
-  /* --------------------------------------------
-     Visual system: add image/visual per section
-     (no HTML changes; uses ::before)
-     -------------------------------------------- */
-  .section {
-    position: relative;
-    overflow: hidden;
-  }
-  .section .container { position: relative; z-index: 2; }
-
-  /* subtle paper noise */
-  .section::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 1;
-    opacity: 0.18;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.25'/%3E%3C/svg%3E");
-    mix-blend-mode: multiply;
-  }
-
-  /* Each major section gets a clean, premium editorial image (low opacity). */
-  .section.problem::before,
-  .section.solution::before,
-  .section.speakers::before,
-  .section.program::before,
-  .section.pricing::before,
-  .section.steps::before,
-  .section.bonuses::before,
-  .section.location::before,
-  .section.contact::before,
-  .section.faq::before,
-  .cta-section::before {
-    content: "";
-    position: absolute;
-    inset: -20% -10% -20% -10%;
-    z-index: 0;
-    pointer-events: none;
-    background-size: cover;
-    background-position: center;
-    filter: grayscale(0.25) contrast(1.05) saturate(0.9);
-    opacity: 0.12;
-    transform: scale(1.02);
-  }
-
-  .section.problem { background: var(--bg-2); }
+  }.section.problem { background: var(--bg-2); }
   .section.solution { background: var(--bg); }
   .section.speakers { background: var(--bg-2); }
   .section.program { background: var(--bg); }
@@ -328,49 +282,37 @@
   .section.faq { background: var(--bg); }
   .cta-section { background: var(--bg-2); }
 
-  /* Non-cheesy, clean, business/editorial visuals (no forced smiles) */
-  .section.problem::before {
-    background-image:
-      linear-gradient(180deg, rgba(244,242,238,1) 0%, rgba(244,242,238,0.70) 42%, rgba(244,242,238,1) 100%),
-      url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1800&q=80');
+  /* --------------------------------------------
+     Sections (simple + clean)
+     -------------------------------------------- */
+  .section { position: relative; background: var(--bg); }
+  .section.problem, .section.pricing, .section.steps, .section.location { background: var(--bg-2); }
+  .section.speakers { background: var(--bg-2); }
+  .cta-section { background: var(--bg-2); }
+
+  /* Media placeholders */
+  .media-slot {
+    margin: 2.25rem auto 0;
+    max-width: 980px;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(244,242,238,0.9));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted-2);
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
   }
-  .section.solution::before {
-    background-image:
-      linear-gradient(180deg, rgba(251,250,247,1) 0%, rgba(251,250,247,0.62) 45%, rgba(251,250,247,1) 100%),
-      url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1800&q=80');
-  }
-  .section.speakers::before {
-    background-image:
-      linear-gradient(180deg, rgba(244,242,238,1) 0%, rgba(244,242,238,0.68) 45%, rgba(244,242,238,1) 100%),
-      url('https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1800&q=80');
-  }
-  .section.program::before {
-    background-image:
-      linear-gradient(180deg, rgba(251,250,247,1) 0%, rgba(251,250,247,0.66) 45%, rgba(251,250,247,1) 100%),
-      url('https://images.unsplash.com/photo-1450101215322-bf5cd27642fc?auto=format&fit=crop&w=1800&q=80');
-  }
-  .section.pricing::before,
-  .section.steps::before {
-    background-image:
-      linear-gradient(180deg, rgba(244,242,238,1) 0%, rgba(244,242,238,0.70) 45%, rgba(244,242,238,1) 100%),
-      url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1800&q=80');
-  }
-  .section.bonuses::before {
-    background-image:
-      linear-gradient(180deg, rgba(251,250,247,1) 0%, rgba(251,250,247,0.64) 45%, rgba(251,250,247,1) 100%),
-      url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=80');
-  }
-  .section.location::before {
-    background-image:
-      linear-gradient(180deg, rgba(244,242,238,1) 0%, rgba(244,242,238,0.70) 45%, rgba(244,242,238,1) 100%),
-      url('https://images.unsplash.com/photo-1529335764857-3f1164d1cb24?auto=format&fit=crop&w=1800&q=80');
-  }
-  .section.contact::before,
-  .section.faq::before,
-  .cta-section::before {
-    background-image:
-      linear-gradient(180deg, rgba(251,250,247,1) 0%, rgba(251,250,247,0.66) 45%, rgba(251,250,247,1) 100%),
-      url('https://images.unsplash.com/photo-1526481280695-3c687fd5432c?auto=format&fit=crop&w=1800&q=80');
+  .media-slot small {
+    display:block;
+    margin-top: 0.5rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform:none;
+    color: var(--muted);
   }
 
   /* --------------------------------------------
@@ -743,6 +685,8 @@
     <!-- PAS / PROBLEM IDENTIFICATION -->
     <section class="section problem">
         <div class="container">
+            <div class="media-slot"><div>Снимка / визуал
+              <small>PAS / Problem</small></div></div>
             <div class="text-center">
                 <span class="section-label">PAS</span>
                 <h2 class="section-title">Ако си честен със себе си, реалността изглежда така:</h2>
@@ -762,6 +706,8 @@
     <!-- ANTI-BLAME -->
     <section class="section solution">
         <div class="container">
+            <div class="media-slot"><div>Снимка / визуал
+              <small>Anti-blame / Solution</small></div></div>
             <div class="text-center">
                 <span class="section-label">ПРОБЛЕМЪТ НЕ СИ ТИ</span>
                 <h2 class="section-title">Важно е да го чуеш ясно</h2>
@@ -845,6 +791,8 @@
     <!-- SPEAKERS -->
     <section class="section speakers">
         <div class="container">
+            <div class="media-slot"><div>Снимка / визуал
+              <small>Лектори</small></div></div>
             <div class="text-center">
                 <span class="section-label">Лекторите</span>
                 <h2 class="section-title">На сцена: хора, които мислят в печалба</h2>
@@ -876,6 +824,8 @@
     <!-- PROGRAM -->
     <section class="section program">
         <div class="container">
+            <div class="media-slot"><div>Снимка / визуал
+              <small>Програма</small></div></div>
             <div class="text-center">
                 <span class="section-label">Програмата</span>
                 <h2 class="section-title">Теми, които носят печалба</h2>
@@ -894,6 +844,8 @@
     <!-- APPLY / PROCESS -->
     <section class="section pricing" id="apply">
         <div class="container">
+            <div class="media-slot"><div>Снимка / визуал
+              <small>Кандидатстване</small></div></div>
             <div class="text-center">
                 <span class="section-label">Кандидатстване</span>
                 <h2 class="section-title">Кандидатствай за място</h2>
@@ -946,6 +898,8 @@
     <!-- HOW IT WORKS / STEPS -->
     <section class="section steps">
         <div class="container">
+            <div class="media-slot"><div>Снимка / визуал
+              <small>Стъпки</small></div></div>
             <div class="text-center">
                 <span class="section-label">Как става</span>
                 <h2 class="section-title">Как протича кандидатстването</h2>
@@ -983,6 +937,8 @@
     <!-- BONUSES -->
     <section class="section bonuses">
         <div class="container">
+            <div class="media-slot"><div>Снимка / визуал
+              <small>Бонуси</small></div></div>
             <div class="text-center">
                 <span class="section-label">Бонуси</span>
                 <h2 class="section-title">С какво си тръгваш (освен яснота)</h2>
@@ -1003,6 +959,8 @@
     <!-- LOCATION / LOGISTICS -->
     <section class="section location">
         <div class="container">
+            <div class="media-slot"><div>Снимка / визуал
+              <small>Локация</small></div></div>
             <div class="text-center">
                 <span class="section-label">Локация</span>
                 <h2 class="section-title">Къде и как</h2>
@@ -1035,6 +993,8 @@
     <!-- CONTACT -->
     <section class="section contact">
         <div class="container">
+            <div class="media-slot"><div>Снимка / визуал
+              <small>Контакт</small></div></div>
             <div class="text-center">
                 <span class="section-label">Контакт</span>
                 <h2 class="section-title">Имаш въпрос преди да кандидатстваш?</h2>
@@ -1061,6 +1021,8 @@
     <!-- FAQ -->
     <section class="section faq">
         <div class="container">
+            <div class="media-slot"><div>Снимка / визуал
+              <small>FAQ</small></div></div>
             <div class="text-center">
                 <span class="section-label">FAQ</span>
                 <h2 class="section-title">Често задавани въпроси</h2>
